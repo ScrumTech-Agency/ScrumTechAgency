@@ -14,6 +14,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+<<<<<<< HEAD
+=======
+        <option value="Enum" />
+>>>>>>> featureTransaction
       </list>
     </option>
   </component>
@@ -41,8 +45,12 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;D:/DIPLOMADO/JAVAFULLSTACK/ProyectoCicloTres/ScrumTechAgency&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andres.mena/OneDrive - Universidad Cooperativa de Colombia/Andrés Mena/Profesor/Cursos y formación/Misión TIC/Ciclo 3/ScrumTechAgency&quot;
+>>>>>>> featureTransaction
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
