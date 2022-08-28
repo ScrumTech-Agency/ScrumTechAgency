@@ -1,9 +1,6 @@
 package com.FisiOnLine.main.model;
-<<<<<<< HEAD
 
-=======
 import java.util.ArrayList;
->>>>>>> 1f46c655caeb0b56ca36869cb25708b80f91ff30
 import java.util.Date;
 import java.util.List;
 
