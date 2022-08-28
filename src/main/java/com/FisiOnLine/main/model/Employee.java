@@ -1,61 +1,72 @@
 package com.FisiOnLine.main.model;
+
 import java.util.Date;
 
 public class Employee {
     //Atributos
-    private long id;
-    private String email;
-    private Profile profile;
-    private Enum_RoleName role;
+    private long idEmpl;
+    private String nameEmpl;
+    private String emailEmpl;
+    private Profile profileEmpl;
+    private Enum_RoleName roleEmpl;
     private Enterprise enterprise;
     private Transaction [] transactions;
     private Date updatedAt;
     private Date cratedAt;
 
     //Constructor
-    public Employee(long id, String email, Profile profile, Enum_RoleName role, Enterprise enterprise) {
-        this.id = id;
-        this.email = email;
-        this.profile = profile;
-        this.role = role;
+
+    public Employee(String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl, Enterprise enterprise) {
+        super ();
+        this.nameEmpl = nameEmpl;
+        this.emailEmpl = emailEmpl;
+        this.roleEmpl = roleEmpl;
         this.enterprise = enterprise;
     }
-    //Constructor sin Atributos
 
+    //Constructor sin Atributos
     public Employee() {
     }
+
     //Getters y Setters
-
-    public long getId() {
-        return id;
+    public long getIdEmpl() {
+        return idEmpl;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdEmpl(long idEmpl) {
+        this.idEmpl = idEmpl;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNameEmpl() {
+        return nameEmpl;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNameEmpl(String nameEmpl) {
+        this.nameEmpl = nameEmpl;
     }
 
-    public Profile getProfile() {
-        return profile;
+    public String getEmailEmpl() {
+        return emailEmpl;
     }
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
+    public void setEmailEmpl(String emailEmpl) {
+        this.emailEmpl = emailEmpl;
     }
 
-    public Enum_RoleName getRole() {
-        return role;
+    public Profile getProfileEmpl() {
+        return profileEmpl;
     }
 
-    public void setRole(Enum_RoleName role) {
-        this.role = role;
+    public void setProfileEmpl(Profile profileEmpl) {
+        this.profileEmpl = profileEmpl;
+    }
+
+    public Enum_RoleName getRoleEmpl() {
+        return roleEmpl;
+    }
+
+    public void setRoleEmpl(Enum_RoleName roleEmpl) {
+        this.roleEmpl = roleEmpl;
     }
 
     public Enterprise getEnterprise() {
@@ -90,3 +101,4 @@ public class Employee {
         this.cratedAt = cratedAt;
     }
 }
+
