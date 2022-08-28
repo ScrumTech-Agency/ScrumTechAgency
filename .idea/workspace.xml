@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="6f29a42a-e7e7-4092-8d94-2dc4f3c9ba6c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Employee.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="6f29a42a-e7e7-4092-8d94-2dc4f3c9ba6c" name="Changes" comment="" />
+>>>>>>> 17b5c4479645c25514a0036da2de82c816174416
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +21,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+<<<<<<< HEAD
+=======
+        <option value="Enum" />
+>>>>>>> featureTransaction
       </list>
     </option>
   </component>
@@ -44,8 +52,17 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;G:/PROGRAMACION/CICLO 3/PROYECTOS/ScrumTechAgency/ScrumTechAgency&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+=======
+<<<<<<< HEAD
+    &quot;last_opened_file_path&quot;: &quot;D:/DIPLOMADO/JAVAFULLSTACK/ProyectoCicloTres/ScrumTechAgency&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andres.mena/OneDrive - Universidad Cooperativa de Colombia/Andrés Mena/Profesor/Cursos y formación/Misión TIC/Ciclo 3/ScrumTechAgency&quot;
+>>>>>>> featureTransaction
+>>>>>>> 17b5c4479645c25514a0036da2de82c816174416
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
