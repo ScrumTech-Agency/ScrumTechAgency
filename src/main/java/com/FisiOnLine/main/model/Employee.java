@@ -1,5 +1,7 @@
 package com.FisiOnLine.main.model;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Employee {
     //Atributos
@@ -8,7 +10,7 @@ public class Employee {
     private Profile profile;
     private Enum_RoleName role;
     private Enterprise enterprise;
-    private Transaction [] transactions;
+    private List<Transaction> transactions = new ArrayList<>();
     private Date updatedAt;
     private Date cratedAt;
 
@@ -66,11 +68,11 @@ public class Employee {
         this.enterprise = enterprise;
     }
 
-    public Transaction[] getTransactions() {
+    public List<Transaction> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(Transaction[] transactions) {
+    public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
     }
 

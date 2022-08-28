@@ -1,6 +1,11 @@
 package com.FisiOnLine.main.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import org.apache.catalina.User;
+
 
 public class Enterprise {
     private long id;
@@ -8,8 +13,8 @@ public class Enterprise {
     private String document;
     private String phone;
     private String address;
-    private User[] users;
-    private Transaction[] transactions;
+    private List<User> users = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
     private Date createdAt;
     private Date updateAt;
 
@@ -68,19 +73,20 @@ public class Enterprise {
         this.address = address;
     }
 
-    public User[] getUsers() {
+
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(User[] users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 
-    public Transaction[] getTransactions() {
+    public List<Transaction> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(Transaction[] transactions) {
+    public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
     }
 
