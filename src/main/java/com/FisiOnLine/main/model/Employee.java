@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Employee {
-    //Atributos
+    //Atributos de la Clase
     private long idEmpl;
     private String nameEmpl;
     private String emailEmpl;
