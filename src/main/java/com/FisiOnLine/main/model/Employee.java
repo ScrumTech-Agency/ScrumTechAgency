@@ -18,12 +18,12 @@ public class Employee {
 
     //Constructor
 
-    public Employee(String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl, Enterprise enterprise) {
+    public Employee(long idEmpl ,String nameEmpl, String emailEmpl) {
         super ();
+        this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
-        this.roleEmpl = roleEmpl;
-        this.enterprise = enterprise;
+
     }
 
     //Constructor sin Atributos
