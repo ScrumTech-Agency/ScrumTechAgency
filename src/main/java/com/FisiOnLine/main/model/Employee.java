@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 public class Employee {
+
+
     //Atributos de la Clase
     private long idEmpl;
     private String nameEmpl;
@@ -18,13 +21,16 @@ public class Employee {
 
     //Constructor
 
-    public Employee(long idEmpl ,String nameEmpl, String emailEmpl) {
-        super ();
+
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl,Enterprise enterprise) {
         this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
-
+        this.roleEmpl = roleEmpl;
+        this.enterprise = enterprise;
     }
+
+
 
     //Constructor sin Atributos
     public Employee() {

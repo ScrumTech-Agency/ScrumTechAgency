@@ -1,11 +1,9 @@
 package com.FisiOnLine.main.service;
 
 import com.FisiOnLine.main.model.Employee;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.FisiOnLine.main.model.Enterprise;
+import com.FisiOnLine.main.model.Enum_RoleName;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 
@@ -17,7 +15,7 @@ public class GestorEmployee {
 
         this.employees = new ArrayList<>();
 
-        this.employees.add(new Employee(123,"wilson","wahs_30"));
+        this.employees.add(new Employee(123,"wilson","wahs_30",Enum_RoleName.Admin, new Enterprise(123456, "Scrumfisio", "NIT808","30174282","Calle 24 A" )));
 
     }
 
