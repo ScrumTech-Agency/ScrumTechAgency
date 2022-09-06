@@ -68,7 +68,7 @@ public class GestorEmployee {
         }
     }
 
-    public  Employee updateUsuarioAll(Employee employee_update, String id) throws Exception {
+    public  Employee updateEmployeeAll(Employee employee_update, String id) throws Exception {
         try {
             Employee usuario_Bd = getEmployee(Long.valueOf(id)); //consulta empleadocon get
 
@@ -78,12 +78,23 @@ public class GestorEmployee {
             usuario_Bd.setRoleEmpl(employee_update.getRoleEmpl());
             usuario_Bd.setEnterprise(employee_update.getEnterprise());
 
-
             return usuario_Bd;
         } catch (Exception e) {
             throw new Exception("Usuario No existe , Fallo en la actualización de datosD");
         }
     }
+    public String deleteEmployee(String id) throws Exception {
+        try {
+            Employee employee =getEmployee(Long.valueOf(id));
+            this.employees.remove(employee);
+            return("Usuario Eliminado Exitosamente");
+        }catch (Exception e){
+            throw new Exception("Usuario No existe para eliminar");
+        }
+
+
+    }
+
     public ArrayList<Employee> getEmployees() {
         return employees;
     }

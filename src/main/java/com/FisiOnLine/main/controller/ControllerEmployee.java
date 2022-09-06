@@ -52,12 +52,31 @@ public class ControllerEmployee {
     @PutMapping("/employee/{id}")
     public ResponseEntity<ObjetoRespuesta> putEmployee(@RequestBody Employee employee_update, @PathVariable String id ){
         try {
-            Employee employee_bd = gestorEmployee.updateEmployee(employee_update, id);
+            Employee employee_bd = gestorEmployee.updateEmployeeAll(employee_update, id);
             return new ResponseEntity<>(new ObjetoRespuesta("Actualización Exitosa",employee_bd), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(new ObjetoRespuesta(e.getMessage(),null),HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+    @PatchMapping("/employee/{id}")
+    public ResponseEntity<ObjetoRespuesta> patchUsuario(@RequestBody Employee employee_update, @PathVariable String id) {
+        try {
+            Employee employee_bd = gestorEmployee.updateEmployee(employee_update, id);
+            return new ResponseEntity<>(new ObjetoRespuesta("Actualización Exitosa", employee_bd), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ObjetoRespuesta(e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @DeleteMapping("/employee/{id}")
+    public ResponseEntity <ObjetoRespuesta> deleteEmployee(@PathVariable String id) {
+
+        try {
+            String mensaje = gestorEmployee.deleteEmployee(id);
+            return new ResponseEntity<>(new ObjetoRespuesta(mensaje, null), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ObjetoRespuesta(e.getMessage(), null), HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
 
     }
-
 }
