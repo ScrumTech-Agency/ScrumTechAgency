@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface EnterpriseManagerInterface {
     public List<Enterprise> getEnterpriseX();
-    public Enterprise getOnlyEnterprise(String idEnterprise) throws Exception;
-    public String setCreateEnterprise(Enterprise EnterpriseX);
+    public Enterprise getOnlyEnterprise(Long idEnterprise) throws Exception;
+    public String setCreateEnterprise(Enterprise EnterpriseX) throws Exception;
     public Enterprise UpdateEnterpriseAll(Enterprise EnterpriseX) throws Exception;
-    public String DeleteEnterprise(String idEnterprise);
+    public String DeleteEnterprise(Long  idEnterprise) throws Exception;
 }

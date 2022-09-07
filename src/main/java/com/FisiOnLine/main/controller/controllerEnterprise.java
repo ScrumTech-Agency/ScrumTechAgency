@@ -24,7 +24,7 @@ public class controllerEnterprise {
     //Creamos una consulta por medio de un PATH PARAMS para una sola empresa
     //En internet debe escribirse localhost:8080/[Aqui el IdEnterprise]
     @GetMapping("/OnlyEnterpriseBD/{idEnterprise}")
-    public ResponseEntity<Object> getEnterpriseXPath(@PathVariable String idEnterprise){
+    public ResponseEntity<Object> getEnterpriseXPath(@PathVariable Long idEnterprise){
         try {
             Enterprise EmpresaX = EnterpriseManagerX.getOnlyEnterprise(idEnterprise);
             return new ResponseEntity<>(EmpresaX, HttpStatus.OK);
@@ -60,7 +60,7 @@ public class controllerEnterprise {
 
     //Request para eliminar una empresa
     @DeleteMapping("/DeleteEnterpriseBD/{idEnterprise}")
-    public ResponseEntity<ObjectAnswer> DeleteEnterprise(@PathVariable String idEnterprise){
+    public ResponseEntity<ObjectAnswer> DeleteEnterprise(@PathVariable Long idEnterprise){
 
         try {
 
