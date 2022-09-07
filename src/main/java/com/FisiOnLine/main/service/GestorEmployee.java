@@ -16,7 +16,7 @@ public class GestorEmployee {
         this.employees = new ArrayList<>();
 
         this.employees.add(new Employee(123,"wilson","wahs_30",Enum_RoleName.Admin, new Enterprise(123456, "Scrumfisio", "NIT808","30174282","Calle 24 A" )));
-
+        this.employees.add(new Employee(1234, "Andres","Andres@",Enum_RoleName.Operario, new Enterprise(12345,"Scrumfisio", "NIT808","30174282","Calle 24 A")));
     }
 
     public Employee getEmployee(Long id) throws Exception {
