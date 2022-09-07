@@ -8,7 +8,7 @@ import org.apache.catalina.User;
 
 
 public class Enterprise {
-    private long id;
+    private long idEnterprise;
     private String name;
     private String document;
     private String phone;
@@ -19,8 +19,8 @@ public class Enterprise {
     private Date updateAt;
 
     // constructor
-    public Enterprise(long id, String name, String document, String phone, String address) {
-        this.id = id;
+    public Enterprise(long idEnterprise, String name, String document, String phone, String address) {
+        this.idEnterprise = idEnterprise;
         this.name = name;
         this.document = document;
         this.phone = phone;
@@ -33,12 +33,12 @@ public class Enterprise {
 
     //getter y setter
 
-    public long getId() {
-        return id;
+    public long getIdEnterprise() {
+        return idEnterprise;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdEnterprise(long idEnterprise) {
+        this.idEnterprise = idEnterprise;
     }
 
     public String getName() {
