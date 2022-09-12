@@ -4,7 +4,7 @@ import com.FisiOnLine.main.model.Enterprise;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-@service
+@Service
 public class EnterpriseManager implements EnterpriseManagerInterface {
     private ArrayList<Enterprise> ListaDeEmpresas = new ArrayList<>();
 

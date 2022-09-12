@@ -1,5 +1,7 @@
 package com.FisiOnLine.main.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,22 +14,27 @@ public class Employee {
     private long idEmpl;
     private String nameEmpl;
     private String emailEmpl;
+    @JsonIgnore
     private Profile profileEmpl;
-    private Enum_RoleName roleEmpl;
+        private Enum_RoleName roleEmpl;
+    @JsonIgnore
     private Enterprise enterprise;
+    @JsonIgnore
     private List<Transaction> transactions = new ArrayList<>();
+    @JsonIgnore
     private Date updatedAt;
+    @JsonIgnore
     private Date cratedAt;
 
     //Constructor
 
 
-    public Employee(long idEmpl, String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl,Enterprise enterprise) {
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl) {
         this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
         this.roleEmpl = roleEmpl;
-        this.enterprise = enterprise;
+
     }
 
 

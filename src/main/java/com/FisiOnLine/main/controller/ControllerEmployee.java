@@ -20,9 +20,9 @@ public class ControllerEmployee {
         return new ResponseEntity<>(gestorEmployee.getEmployees(), HttpStatus.ACCEPTED);
     }
     @GetMapping("/employee")
-    public ResponseEntity<Object> getEmployee(@RequestParam String id){
+    public ResponseEntity<Object> getEmployee(@RequestParam Long id){
         try {
-            Employee employee = gestorEmployee.getEmployee(Long.valueOf(String.valueOf(id)));
+            Employee employee = gestorEmployee.getEmployee(id);
             return new ResponseEntity<>(employee, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -31,9 +31,9 @@ public class ControllerEmployee {
     }
 
     @GetMapping("/employee/{id}")
-    public ResponseEntity<Object> getEmployeePath(@PathVariable String id){
+    public ResponseEntity<Object> getEmployeePath(@PathVariable Long id){
         try {
-            Employee employee = gestorEmployee.getEmployee(Long.valueOf(String.valueOf(id)));
+            Employee employee = gestorEmployee.getEmployee(id);
             return new ResponseEntity<>(employee, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -50,7 +50,7 @@ public class ControllerEmployee {
         }
     }
     @PutMapping("/employee/{id}")
-    public ResponseEntity<ObjetoRespuesta> putEmployee(@RequestBody Employee employee_update, @PathVariable String id ){
+    public ResponseEntity<ObjetoRespuesta> putEmployee(@RequestBody Employee employee_update, @PathVariable Long id ){
         try {
             Employee employee_bd = gestorEmployee.updateEmployeeAll(employee_update, id);
             return new ResponseEntity<>(new ObjetoRespuesta("Actualización Exitosa",employee_bd), HttpStatus.OK);
@@ -59,7 +59,7 @@ public class ControllerEmployee {
         }
     }
     @PatchMapping("/employee/{id}")
-    public ResponseEntity<ObjetoRespuesta> patchUsuario(@RequestBody Employee employee_update, @PathVariable String id) {
+    public ResponseEntity<ObjetoRespuesta> patchUsuario(@RequestBody Employee employee_update, @PathVariable Long id) {
         try {
             Employee employee_bd = gestorEmployee.updateEmployee(employee_update, id);
             return new ResponseEntity<>(new ObjetoRespuesta("Actualización Exitosa", employee_bd), HttpStatus.OK);
@@ -68,7 +68,7 @@ public class ControllerEmployee {
         }
     }
     @DeleteMapping("/employee/{id}")
-    public ResponseEntity <ObjetoRespuesta> deleteEmployee(@PathVariable String id) {
+    public ResponseEntity <ObjetoRespuesta> deleteEmployee(@PathVariable Long id) {
 
         try {
             String mensaje = gestorEmployee.deleteEmployee(id);

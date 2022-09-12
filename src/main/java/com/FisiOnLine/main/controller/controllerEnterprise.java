@@ -1,7 +1,7 @@
 package com.FisiOnLine.main.controller;
 
 import com.FisiOnLine.main.model.Enterprise;
-import com.FisiOnLine.main.model.ObjectAnswer;
+import com.FisiOnLine.main.model.ObjetoRespuesta;
 import com.FisiOnLine.main.service.EnterpriseManagerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,27 +47,27 @@ public class controllerEnterprise {
 
     //Metodo para modificar una empresa
     @PutMapping("/ModificEnterpriseBD")
-    public ResponseEntity<ObjectAnswer> putModificEnterprise(@RequestBody Enterprise EnterpriseX){
+    public ResponseEntity<ObjetoRespuesta> putModificEnterprise(@RequestBody Enterprise EnterpriseX){
 
         try {
             Enterprise EnterpriseBD = EnterpriseManagerX.UpdateEnterpriseAll(EnterpriseX);
-            return new ResponseEntity<>(new ObjectAnswer("Actualizacion Exitosa",EnterpriseBD),HttpStatus.OK);
+            return new ResponseEntity<>(new ObjetoRespuesta("Actualizacion Exitosa",EnterpriseBD),HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(new ObjectAnswer(e.getMessage(),null),HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new ObjetoRespuesta(e.getMessage(),null),HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
 
     //Request para eliminar una empresa
     @DeleteMapping("/DeleteEnterpriseBD/{idEnterprise}")
-    public ResponseEntity<ObjectAnswer> DeleteEnterprise(@PathVariable Long idEnterprise){
+    public ResponseEntity<ObjetoRespuesta> DeleteEnterprise(@PathVariable Long idEnterprise){
 
         try {
 
             String Mensaje = EnterpriseManagerX.DeleteEnterprise(idEnterprise);
-            return new ResponseEntity<>(new ObjectAnswer(Mensaje,null),HttpStatus.OK);
+            return new ResponseEntity<>(new ObjetoRespuesta(Mensaje,null),HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(new ObjectAnswer(e.getMessage(),null),HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new ObjetoRespuesta(e.getMessage(),null),HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
 

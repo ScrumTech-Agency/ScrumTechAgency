@@ -15,8 +15,8 @@ public class GestorEmployee {
 
         this.employees = new ArrayList<>();
 
-        this.employees.add(new Employee(123,"wilson","wahs_30",Enum_RoleName.Admin, new Enterprise(123456, "Scrumfisio", "NIT808","30174282","Calle 24 A" )));
-        this.employees.add(new Employee(1234, "Andres","Andres@",Enum_RoleName.Operario, new Enterprise(12345,"Scrumfisio", "NIT808","30174282","Calle 24 A")));
+        this.employees.add(new Employee(123,"wilson","wahs_30",Enum_RoleName.Admin));
+        this.employees.add(new Employee(1234, "Andres","Andres@",Enum_RoleName.Operario));
     }
 
     public Employee getEmployee(Long id) throws Exception {
@@ -38,9 +38,9 @@ public class GestorEmployee {
         throw new Exception("Empleado Existe");
     }
 
-    public Employee updateEmployee(Employee employee_update, String id) throws Exception {
+    public Employee updateEmployee(Employee employee_update, Long id) throws Exception {
         try {
-            Employee employee_bd = getEmployee(Long.valueOf(id));
+            Employee employee_bd = getEmployee(id);
 
             if(employee_update.getNameEmpl() != null && !employee_update.getNameEmpl().equals("")){
                 employee_bd.setNameEmpl(employee_update.getNameEmpl());
@@ -66,7 +66,7 @@ public class GestorEmployee {
         }
     }
 
-    public  Employee updateEmployeeAll(Employee employee_update, String id) throws Exception {
+    public  Employee updateEmployeeAll(Employee employee_update, Long id) throws Exception {
         try {
             Employee usuario_Bd = getEmployee(Long.valueOf(id)); //consulta empleadocon get
 
@@ -81,7 +81,7 @@ public class GestorEmployee {
             throw new Exception("Usuario No existe , Fallo en la actualización de datosD");
         }
     }
-    public String deleteEmployee(String id) throws Exception {
+    public String deleteEmployee(Long id) throws Exception {
         try {
             Employee employee =getEmployee(Long.valueOf(id));
             this.employees.remove(employee);
