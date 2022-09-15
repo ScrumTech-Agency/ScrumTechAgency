@@ -4,18 +4,33 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.catalina.User;
 
+import javax.persistence.*;
 
+
+@Entity
+@Table(name="Empresas")
 public class Enterprise {
+    @Id
     private long idEnterprise;
+    @Column
     private String name;
+
     private String document;
+
     private String phone;
+
     private String address;
-    private List<User> users = new ArrayList<>();
-    private List<Transaction> transactions = new ArrayList<>();
+
+    private User[] users;
+
+    private Transaction[] transactions;
+
+
     private Date createdAt;
+
     private Date updateAt;
 
     // constructor
@@ -73,20 +88,19 @@ public class Enterprise {
         this.address = address;
     }
 
-
-    public List<User> getUsers() {
+    public User[] getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(User[] users) {
         this.users = users;
     }
 
-    public List<Transaction> getTransactions() {
+    public Transaction[] getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(Transaction[] transactions) {
         this.transactions = transactions;
     }
 
