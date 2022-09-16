@@ -2,21 +2,28 @@ package com.FisiOnLine.main.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+@Entity
+@Table(name="Employee")
 public class Employee {
 
 
     //Atributos de la Clase
+    @Id
     private long idEmpl;
+    @Column
     private String nameEmpl;
+    @Column
     private String emailEmpl;
+    @Column
     @JsonIgnore
     private Profile profileEmpl;
-        private Enum_RoleName roleEmpl;
+
+    private Enum_RoleName roleEmpl;
     @JsonIgnore
     private Enterprise enterprise;
     @JsonIgnore
@@ -25,9 +32,9 @@ public class Employee {
     private Date updatedAt;
     @JsonIgnore
     private Date cratedAt;
+    private List<Enum_RoleName> roles;
 
     //Constructor
-
 
     public Employee(long idEmpl, String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl) {
         this.idEmpl = idEmpl;
@@ -114,6 +121,14 @@ public class Employee {
 
     public void setCratedAt(Date cratedAt) {
         this.cratedAt = cratedAt;
+    }
+
+    public List<Enum_RoleName> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Enum_RoleName> roles) {
+        this.roles = roles;
     }
 }
 
