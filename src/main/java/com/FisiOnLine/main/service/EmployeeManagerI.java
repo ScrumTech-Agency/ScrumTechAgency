@@ -42,29 +42,31 @@ public class EmployeeManagerI implements EmployeeManagerInterface{
 
     @Override
     public Employee UpdateEmployee(Employee employeeUpdate, Long id) throws Exception {
-        Employee employee_Bd =getEmployee(id);
+        Employee employee_Bd = getEmployee(id);
 
-        if(employeeUpdate.getNameEmpl()!=null && !employeeUpdate.getNameEmpl().equals("")){
+        if (employeeUpdate.getNameEmpl() != null && !employeeUpdate.getNameEmpl().equals("")) {
             employee_Bd.setNameEmpl(employeeUpdate.getNameEmpl());
         }
 
-        if(employeeUpdate.getEmailEmpl()!=null && !employeeUpdate.getEmailEmpl().equals("")){
+        if (employeeUpdate.getEmailEmpl() != null && !employeeUpdate.getEmailEmpl().equals("")) {
             employee_Bd.setEmailEmpl(employeeUpdate.getEmailEmpl());
         }
 
         List <String> roles = new ArrayList<>();
-        for (Enum_RoleName rol : employeeUpdate.getRoles()){
-            roles.add(new String(rol.name()));
+        if(employeeUpdate.getRoleEmpl()!=null){
+            for (Enum_RoleName rol : employeeUpdate.getRoleEmpl()){
+                roles.add(new String(rol.name()));
+            }
         }
         for (String rolValid: roles){
-            if (rolValid!=null && !rolValid.equals("")){
+            if (!rolValid.equals("")){
                 employee_Bd.setRoleEmpl(employeeUpdate.getRoleEmpl());
             }
         }
         return repository.save(employee_Bd);
     }
 
-    @Override
+   @Override
     public String DeleteEmployee(Long idEmployee) throws Exception {
         repository.deleteById(idEmployee);
         return "Usuario Eliminado Exitosamente";
