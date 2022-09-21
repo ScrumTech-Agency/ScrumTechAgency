@@ -17,21 +17,24 @@ public class Enterprise {
     private long idEnterprise;
     @Column
     private String name;
+    @Column
 
     private String document;
-
+    @Column
     private String phone;
-
+    @Column
     private String address;
 
-    private User[] users;
+    //private User[] users;
+    @OneToMany(mappedBy = "enterprise")
+    private List<Transaction> transactions;
 
-    private Transaction[] transactions;
-
-
+    @Column
     private Date createdAt;
-
+    @Column
     private Date updateAt;
+    @OneToMany(mappedBy = "enterprise")
+    private List<Employee> employees;
 
     // constructor
     public Enterprise(long idEnterprise, String name, String document, String phone, String address) {
@@ -88,19 +91,19 @@ public class Enterprise {
         this.address = address;
     }
 
-    public User[] getUsers() {
+    /*public User[] getUsers() {
         return users;
     }
 
     public void setUsers(User[] users) {
         this.users = users;
-    }
+    }*/
 
-    public Transaction[] getTransactions() {
+    public List<Transaction> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(Transaction[] transactions) {
+    public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
     }
 
@@ -118,5 +121,13 @@ public class Enterprise {
 
     public void setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }
