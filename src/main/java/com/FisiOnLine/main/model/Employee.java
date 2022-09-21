@@ -32,7 +32,7 @@ public class Employee {
     private Date updatedAt;
     @JsonIgnore
     private Date cratedAt;
-    //private List<Enum_RoleName> roles;
+
 
     //Constructor
 
