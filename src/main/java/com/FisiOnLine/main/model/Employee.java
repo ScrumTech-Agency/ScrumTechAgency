@@ -2,38 +2,45 @@ package com.FisiOnLine.main.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+@Entity
+@Table(name="Employee")
 public class Employee {
 
 
     //Atributos de la Clase
+    @Id
     private long idEmpl;
+    @Column
     private String nameEmpl;
+    @Column
     private String emailEmpl;
-    @JsonIgnore
-    private Profile profileEmpl;
-        private Enum_RoleName roleEmpl;
-    @JsonIgnore
+
+    //private Profile profileEmpl;
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Enum_RoleName.class )
+    private List<Enum_RoleName> roleEmpl;
+    @ManyToOne
     private Enterprise enterprise;
-    @JsonIgnore
+    @OneToMany(mappedBy = "empleado")
     private List<Transaction> transactions = new ArrayList<>();
     @JsonIgnore
     private Date updatedAt;
     @JsonIgnore
     private Date cratedAt;
 
+
     //Constructor
 
-
-    public Employee(long idEmpl, String nameEmpl, String emailEmpl, Enum_RoleName roleEmpl) {
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl) {
         this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
-        this.roleEmpl = roleEmpl;
+        //this.roleEmpl = roleEmpl;
 
     }
 
@@ -68,19 +75,19 @@ public class Employee {
         this.emailEmpl = emailEmpl;
     }
 
-    public Profile getProfileEmpl() {
+    /*public Profile getProfileEmpl() {
         return profileEmpl;
     }
 
     public void setProfileEmpl(Profile profileEmpl) {
         this.profileEmpl = profileEmpl;
-    }
+    }*/
 
-    public Enum_RoleName getRoleEmpl() {
+    public List<Enum_RoleName> getRoleEmpl() {
         return roleEmpl;
     }
 
-    public void setRoleEmpl(Enum_RoleName roleEmpl) {
+    public void setRoleEmpl(List<Enum_RoleName> roleEmpl) {
         this.roleEmpl = roleEmpl;
     }
 
@@ -115,5 +122,13 @@ public class Employee {
     public void setCratedAt(Date cratedAt) {
         this.cratedAt = cratedAt;
     }
+
+    /*public List<Enum_RoleName> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Enum_RoleName> roles) {
+        this.roles = roles;
+    }*/
 }
 
