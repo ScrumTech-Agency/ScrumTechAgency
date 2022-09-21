@@ -32,7 +32,7 @@ public class Employee {
     private Date updatedAt;
     @JsonIgnore
     private Date cratedAt;
-    
+
     //@Enumerated(EnumType.STRING)
     //@ElementCollection(targetClass = Enum_RoleName.class)
     private List<Enum_RoleName> roles;
