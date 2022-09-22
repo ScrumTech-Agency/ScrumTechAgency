@@ -7,19 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class EmployeeManagerI implements EmployeeManagerInterface{
-
+//Inyeccion de bean
     @Autowired
     private EmployeeRepository repository;
+
+
+    //Metodo para consultar lista de todos los empleados
     @Override
     public List<Employee> getEmployees() {
         return repository.findAll();
     }
 
+    //Metodo que consulta un empleado por ID de empleado
     @Override
     public Employee getEmployee(Long idEmployee) throws Exception {
         Optional<Employee> employeeBd = repository.findById(idEmployee);
@@ -28,10 +33,14 @@ public class EmployeeManagerI implements EmployeeManagerInterface{
         }
         throw  new Exception("Usuario no existe");
     }
-
+    //Método que guarda un empleado en base de datos
     @Override
-    public String setEmployee(Employee Employees) throws Exception {
-        repository.save(Employees);
+    public String setEmployee(Employee employees) throws Exception {
+        Date today = new Date();
+        employees.setCratedAt(today);
+        System.out.println(today);
+        repository.save(employees);
+
         return "Usuario Creado Exitosamente";
     }
 

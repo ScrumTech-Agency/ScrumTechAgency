@@ -31,7 +31,7 @@ public class Employee {
     @JsonIgnore
     private Date updatedAt;
     @JsonIgnore
-    private Date cratedAt;
+    private Date createdAt;
 
 
     //Constructor
@@ -116,19 +116,13 @@ public class Employee {
     }
 
     public Date getCratedAt() {
-        return cratedAt;
+        return createdAt;
     }
 
-    public void setCratedAt(Date cratedAt) {
-        this.cratedAt = cratedAt;
+    public void setCratedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    /*public List<Enum_RoleName> getRoles() {
-        return roles;
-    }
 
-    public void setRoles(List<Enum_RoleName> roles) {
-        this.roles = roles;
-    }*/
 }
 
