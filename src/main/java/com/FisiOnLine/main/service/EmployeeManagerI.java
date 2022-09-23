@@ -36,9 +36,6 @@ public class EmployeeManagerI implements EmployeeManagerInterface{
     //Método que guarda un empleado en base de datos
     @Override
     public String setEmployee(Employee employees) throws Exception {
-        Date today = new Date();
-        employees.setCratedAt(today);
-        System.out.println(today);
         repository.save(employees);
 
         return "Usuario Creado Exitosamente";

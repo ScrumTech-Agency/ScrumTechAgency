@@ -22,7 +22,7 @@ public class Employee {
 
     //private Profile profileEmpl;
     @Enumerated(EnumType.STRING)
-    @ElementCollection(targetClass = Enum_RoleName.class )
+    @ElementCollection(targetClass = Enum_RoleName.class, fetch = FetchType.EAGER)
     private List<Enum_RoleName> roleEmpl;
     @ManyToOne
     private Enterprise enterprise;

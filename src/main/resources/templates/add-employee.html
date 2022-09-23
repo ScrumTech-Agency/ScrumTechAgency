@@ -11,7 +11,7 @@
 <body>
 <main>
 
-    <div class="px-4 py-5 my-5 text-center">
+    <div class="px-4 py-5 my-5 text-center" d-flex flex-colum  align-items-center>
         <h2>Nuevo Usuario</h2>
         <span class="px-8 py-4 my-4 text-center">Todos los campos son obligatorios</span>
         <form th:object="${employeeRegister}"  th:method="post"  th:action="@{/employee/register}" class="col-lg-8 mx-auto mb-4">
@@ -24,14 +24,17 @@
             </div>
             <div class="px-4 py-1 my-1 text-center">
                 <input th:field = "*{emailEmpl}"  type="email" placeholder="name@example.com">
-                <div class="px-4 py-1 my-1 text-center"><label for="Rol">Rol</label>
-                    <select name="Rol" id="Rol">
-                        <option value="Admin">Admin</option>
-                        <option value="Operario">Operario</option>
-                    </select></div>
-            <div class="px-4 py-2 my-2 text-center">
-                <button type="submit" class="btn btn-primary px-5 gap-5">Guardar</button>
             </div>
+
+            <div th:each="rol : ${rolesList}" class="form-check">
+                <input  th:field="*{roleEmpl}" type="checkbox" th:text="${rol.name}" th:value="${rol.name}"></td>
+            </div>
+
+
+                <div class="px-4 py-2 my-2 text-center">
+                    <button type="submit" class="btn btn-primary px-5 gap-5">Guardar</button>
+                </div>
+
         </form>
     </div>
 </main>
