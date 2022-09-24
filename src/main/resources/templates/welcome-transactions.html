@@ -48,38 +48,52 @@
     </div>
   </div>
 </nav>
-<div class="container py-4">
+<div class="container">
   <div class="row">
-    <div class="container mt-5 py-4">
+    <div class="container mt-5">
       <div class="row justify-content-center">
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-4 bg-white mt-4 mb-4">
-          <h2 class=" tw-bold mt-4 py-4 text-center">Sistema de Gestión de Ingresos y Gastos</h2>
-          <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
-            <div class="col">
-              <div class="card">
-                <img src="img/admon.jpg" class="card-img-top" alt="img/admon.jpg">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-4 bg-white mt-4">
+          <h4 class="text-center mt-4 mb-4">Sistema de Gestión de Ingresos y Gastos</h4>
+          <h3 class=" tw-bold mt-4 py-3 text-center">Transacciones</h3>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card text-center">
+                <div class="card-header bg-info">
+                  INGRESOS
+                </div>
                 <div class="card-body">
-                  <h4 class="card-title text-center">Gestión Transacciones</h4>
+                  <h5 class="card-title mt-3 mb-3">Total Ingresos</h5>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  <a href="#" class="btn btn-info mt-2">Nuevo Ingreso</a>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/empleados.jpg" class="card-img-top" alt="img/empleados.jpg">
+            <div class="col-sm-6">
+              <div class="card text-center">
+                <div class="card-header bg-info">
+                  GASTOS
+                </div>
                 <div class="card-body">
-                  <h4 class="card-title text-center">Gestión Usuarios</h4>
+                  <h5 class="card-title mt-3 mb-3">Total Gastos</h5>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  <a href="#" class="btn btn-info mt-2">Nuevo Gasto</a>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/empresas.jpg" class="card-img-top" alt="img/empresas.jpg">
-                <div class="card-body">
-                  <h4 class="card-title text-center">Gestión Empresas</h4>
-                </div>
-              </div>
-            </div>
-
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

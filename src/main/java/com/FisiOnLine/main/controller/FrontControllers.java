@@ -8,7 +8,7 @@ public class FrontControllers {
 
     @GetMapping("/")
     public String index(){
-        return "index";
+        return "index-new";
     }
 
     @GetMapping("/login")
