@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9c63bf-2f3f-46e4-89ef-4766bd585d33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/Repositories/TransactionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllerTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/TransactionManagerH.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/TransactionManagerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/wellcome-transaction-new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllerTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllerTransaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/TransactionControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/ControllerTransaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-transaction-new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-transaction-new.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,13 +64,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DIPLOMADO/JAVAFULLSTACK/Relaciones&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/DIPLOMADO/JAVAFULLSTACK/Relaciones"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="FisiOnLineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.FisiOnLine.main.FisiOnLineApplication" />

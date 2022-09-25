@@ -18,9 +18,9 @@ public class Transaction {
     private Employee empleado;
     @ManyToOne
     private Enterprise enterprise;
-    @JsonIgnore
+    @Column
     private java.sql.Date createdAt;
-    @JsonIgnore
+    @Column
     private Date updatedAt;
 
     //Constructor
@@ -93,5 +93,18 @@ public class Transaction {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", concept='" + concept + '\'' +
+                ", amount=" + amount +
+                ", empleado=" + empleado +
+                ", enterprise=" + enterprise +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
