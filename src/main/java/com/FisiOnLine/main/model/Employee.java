@@ -19,6 +19,8 @@ public class Employee {
     private String nameEmpl;
     @Column
     private String emailEmpl;
+    @Column
+    private String password;
 
     //private Profile profileEmpl;
     @Enumerated(EnumType.STRING)
@@ -28,18 +30,19 @@ public class Employee {
     private Enterprise enterprise;
     @OneToMany(mappedBy = "empleado")
     private List<Transaction> transactions = new ArrayList<>();
-    @JsonIgnore
+    @Column
     private Date updatedAt;
-    @JsonIgnore
+    @Column
     private Date createdAt;
 
 
     //Constructor
 
-    public Employee(long idEmpl, String nameEmpl, String emailEmpl) {
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl, String password) {
         this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
+        this.password = password;
         //this.roleEmpl = roleEmpl;
 
     }
@@ -123,6 +126,20 @@ public class Employee {
         this.createdAt = createdAt;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 }
 

@@ -20,27 +20,27 @@
         <div class="offcanvas-body bg-info">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Usuarios</a>
+              <a class="nav-link active" aria-current="page" href="/">Usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Empresas</a>
+              <a class="nav-link active" aria-current="page" href="/">Empresas</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Transacciones
               </a>
               <ul class="dropdown-menu bg-info">
-                <li><a class="dropdown-item bg-info" href="#">Ingresos</a></li>
+                <li><a class="dropdown-item bg-info" href="/">Ingresos</a></li>
                 <li>
                   <hr class="dropdown-divider">
-                <li><a class="dropdown-item bg-info" href="#">Gastos</a></li>
+                <li><a class="dropdown-item bg-info" href="/">Gastos</a></li>
                 </li>
               </ul>
               <div class="navbar-nav ms-auto">
-                <a class="nav-link active" href="#"> Cerrar Sesión</a>
+                <a class="nav-link active" href="/login"> Cerrar Sesión</a>
               </div>
             </li>
           </ul>
@@ -54,15 +54,15 @@
         <div class="container mt-5">
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 py-4 bg-white mt-4">
-              <h4 class="text-center mt-4 mb-4">Sistema de Gestión de Ingresos y Gastos</h4>
+              <h1 class="text-center mt-4 mb-4">Sistema de Gestión de Ingresos y Gastos</h1>
                 <div class="py-3">
                   <div class="row">
                     <div class="col d-flex justify-content-between">
                       <input type="submit" value="" class="btn btn-sm btn-light float-left">
-                      <a href="#" class="btn btn-sm btn-ligh mx-auto" style="margin:auto"></a>
-                      <input type="submit" value="+ Nuevo Usuario" class="btn btn-sm btn-info float-right">
+                      <a href="/" class="btn btn-sm btn-ligh mx-auto" style="margin:auto"></a>
+                      <a href="addemployee"  class="btn btn-sm btn-info float-right" type="submit"> + Nuevo employee </a>
                     </div>
-                    <h3 class=" tw-bold mb-3">Usuarios</h3>
+                    <h3 class= " tw-bold mb-3">Usuarios</h3>
                       <table class="table table-info table-striped">
                           <thead>
                           <tr>
@@ -70,21 +70,23 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Rol</th>
-                            <th scope="col">Estado</th>
+                            <th scope="col">Empresa</th>
                             <th scope="col">Acciones</th>
                           </tr>
                           </thead>
                           <tbody>
-                          <tr th:each="usuario : ${usuarios}">
-                            <td th:text="${usuario.id}"></td>
-                            <td th:text="${usuario.nombre}"></td>
-                            <td th:text="${usuario.correo}"></td>
-                            <td th:text="${usuario.rol}"></td>
-                            <td th:text="${usuario.estado}"></td>
+                          <tr th:each="employee : ${employees}">
+                            <td th:text="${employee.idEmpl}"></td>
+                            <td th:text="${employee.nameEmpl}"></td>
+                            <td th:text="${employee.emailEmpl}"></td>
+                            <td th:text="${employee.roleEmpl}"></td>
+                            <td th:text="${employee.enterprise}"></td>
                             <td>
-                              <form>
-                                <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
-                                <button class="btn btn-sm btn-outline-dark" type="button">Borrar</button>
+                              <form th:action="@{/employee/update/{id}(id=${employee.idEmpl})}" th:method="get">
+                                <button  type="submit" class="btn btn-sm btn-outline-dark" >Editar</button>
+                              </form>
+                              <form th:action="@{/employee/front/{id}(id=${employee.idEmpl})}" th:method="delete">
+                                <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>
                               </form>
                             </td>
                           </tr>

@@ -19,14 +19,14 @@ public class FrontControllerEmployee {
     public String getWelcome(Model model) {
         model.addAttribute("rol", Enum_RoleName.ROLE_ADMIN);
         model.addAttribute("employees", employeeManager.getEmployees());
-        return "welcome-employee";
+        return "welcome-employee-new";
     }
 
     @GetMapping("/addemployee")
     public String getAddEmployee(Model model){
         model.addAttribute("employeeRegister", new Employee());
         model.addAttribute("rolesList",Enum_RoleName.values());
-        return "add-employee";
+        return "add-employee-new";
     }
     @PostMapping("/employee/register")
         public String postEmployee(@ModelAttribute("employeeRegister") Employee employeeParametro,Model model) {
@@ -54,7 +54,7 @@ public class FrontControllerEmployee {
             System.out.println(employeeManager.getEmployee(id));
             model.addAttribute("userUpdate",employeeManager.getEmployee(id));
             model.addAttribute("rolesList", Enum_RoleName.values());
-            return "update-employee";
+            return "update-employee-new";
         } catch (Exception e) {
             return "redirect:/error";
         }
@@ -63,7 +63,6 @@ public class FrontControllerEmployee {
 
     @PutMapping("/employee/front/update")
     public String putUsuario(@ModelAttribute("userUpdate") Employee employeeParametro){
-
         try {
             System.out.println(employeeParametro);
             employeeManager.UpdateEmployee(employeeParametro,employeeParametro.getIdEmpl());
