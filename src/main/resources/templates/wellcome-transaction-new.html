@@ -60,27 +60,27 @@
                 <div class="col d-flex justify-content-between">
                   <input type="submit" value="" class="btn btn-sm btn-light float-left">
                   <a href="#" class="btn btn-sm btn-ligh mx-auto" style="margin:auto"></a>
-                  <input type="submit" value="+ Nuevo Usuario" class="btn btn-sm btn-info float-right">
+                  <input type="submit" value="+ Nueva transacción" class="btn btn-sm btn-info float-right">
                 </div>
-                <h3 class=" tw-bold mb-3">Usuarios</h3>
+                <h3 class=" tw-bold mb-3">Transacciones</h3>
                 <table class="table table-info table-striped">
                   <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Concepto</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Empleado</th>
                     <th scope="col">Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr th:each="usuario : ${usuarios}">
-                    <td th:text="${usuario.id}"></td>
-                    <td th:text="${usuario.nombre}"></td>
-                    <td th:text="${usuario.correo}"></td>
-                    <td th:text="${usuario.rol}"></td>
-                    <td th:text="${usuario.estado}"></td>
+                  <tr th:each="transaction : ${transactions}">
+                    <td th:text="${transaction.id}"></td>
+                    <td th:text="${transaction.concept}"></td>
+                    <td th:text="${transaction.amount}"></td>
+                    <td th:text="${transaction.createdAt}"></td>
+                    <td th:text="${transaction.empleado}"></td>
                     <td>
                       <form>
                         <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
