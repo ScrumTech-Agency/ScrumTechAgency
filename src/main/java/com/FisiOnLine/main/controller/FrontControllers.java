@@ -1,6 +1,8 @@
 package com.FisiOnLine.main.controller;
 
+import com.FisiOnLine.main.model.Transaction;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -14,5 +16,8 @@ public class FrontControllers {
     @GetMapping("/login")
     public String login(){return "login";
     }
+
+
+
 
 }

@@ -1,5 +1,7 @@
 package com.FisiOnLine.main.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -16,13 +18,13 @@ public class Transaction {
     private Employee empleado;
     @ManyToOne
     private Enterprise enterprise;
-    @Column
-    private Date createdAt;
-    @Column
+    @JsonIgnore
+    private java.sql.Date createdAt;
+    @JsonIgnore
     private Date updatedAt;
 
     //Constructor
-    public Transaction(long id, String concept, float amount, Employee empleado, Enterprise enterprise, Date createdAt, Date updatedAt) {
+    public Transaction(long id, String concept, float amount, Employee empleado, Enterprise enterprise, java.sql.Date createdAt, Date updatedAt) {
         this.id = id;
         this.concept = concept;
         this.amount = amount;
@@ -77,11 +79,11 @@ public class Transaction {
         this.enterprise = enterprise;
     }
 
-    public Date getCreatedAt() {
+    public java.sql.Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(java.sql.Date createdAt) {
         this.createdAt = createdAt;
     }
 

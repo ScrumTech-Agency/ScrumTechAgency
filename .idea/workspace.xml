@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9c63bf-2f3f-46e4-89ef-4766bd585d33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/Repositories/EnterpriseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/Repositories/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllerTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/TransactionManagerH.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/TransactionManagerInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Enterprise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Enterprise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/FrontControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/TransactionControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/ControllerTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +34,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
@@ -52,17 +59,20 @@
     </option>
   </component>
   <component name="ProjectId" id="2EPtTPUKEeZjgrAPFTBnjPrsHRO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/DIPLOMADO/JAVAFULLSTACK/Relaciones"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DIPLOMADO/JAVAFULLSTACK/Relaciones&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="FisiOnLineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.FisiOnLine.main.FisiOnLineApplication" />
