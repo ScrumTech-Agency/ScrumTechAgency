@@ -21,29 +21,6 @@ public class FrontControllers {
     public String login(){return "login";
     }
 
-    //Controladores Transaction
-
-    @Autowired
-    private TransactionManagerInterface gestorTransaction;
-
-    @GetMapping("/addtransaction")
-    public String getAddTransaction (Model model){
-        model.addAttribute("formTransaction", new Transaction());
-        return "add-transaction-new";
-    }
-
-    @GetMapping("/wellcometransaction")
-    public String getWellcomeTransaction (Model model){
-        model.addAttribute("transactions",gestorTransaction.getTransactions());
-        return "wellcome-transaction-new";
-    }
-
-
-    @PostMapping("/addtransaction")
-    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction){
-        System.out.println(transaction);
-        return "redirect:/wellcometransaction";
-    }
 
 
 

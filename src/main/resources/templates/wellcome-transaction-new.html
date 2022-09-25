@@ -60,7 +60,9 @@
                 <div class="col d-flex justify-content-between">
                   <input type="submit" value="" class="btn btn-sm btn-light float-left">
                   <a href="#" class="btn btn-sm btn-ligh mx-auto" style="margin:auto"></a>
-                  <input type="submit" value="+ Nueva transacción" class="btn btn-sm btn-info float-right">
+                  <a href="/addtransaction" type="submit" class="btn btn-sm btn-info float-right">
+                    + Nueva transacción
+                  </a>
                 </div>
                 <h3 class=" tw-bold mb-3">Transacciones</h3>
                 <table class="table table-info table-striped">
@@ -80,7 +82,7 @@
                     <td th:text="${transaction.concept}"></td>
                     <td th:text="${transaction.amount}"></td>
                     <td th:text="${transaction.createdAt}"></td>
-                    <td th:text="${transaction.empleado}"></td>
+                    <td th:text="${employee.idEmpl}"></td>
                     <td>
                       <form>
                         <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
