@@ -8,11 +8,11 @@ public class FrontControllers {
 
     @GetMapping("/")
     public String index(){
-        return "index-new";
+        return "index";
     }
 
     @GetMapping("/login")
-    public String login(){return "login";
+    public String login(){return "login-employee";
     }
 
 }
