@@ -9,6 +9,7 @@ import java.util.Date;
 public class Transaction {
     //Atributos
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column
     private String concept;

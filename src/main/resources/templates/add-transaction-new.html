@@ -62,7 +62,7 @@
                             <div class="row justify-content-center">
                             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 py-6 bg-white px-6">
                                 <h3 class=" tw-bold mb-3 text-center">Nueva Transacción</h3>
-                                <form method="post" th:object="${formTransaction}" th:object="${formEmployee}" th:action="@{/addtransaction}">
+                                <form method="post" th:object="${formTransaction}" th:action="@{/transaction/register}">
                                 <div class="mt-4 mb-4">
                                     <input type="date" class="form-control mb-4" th:field="*{createdAt}" placeholder="Fecha"/>
                                     <div class="input-group mb-3">
@@ -71,7 +71,6 @@
                                         <span class="input-group-text">.00</span>
                                     </div>
                                     <input type="text" class="form-control mb-4" th:field="*{concept}" placeholder="Descripción"/>
-                                    <input type="text" class="form-control mb-4" th:field="*{idEmpl}" placeholder="ID empleado"/>
                                 </div>
                                     <div class="form-check mt-4">
                                         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>

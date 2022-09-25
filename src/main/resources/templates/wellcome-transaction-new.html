@@ -77,12 +77,14 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr th:each="transaction : ${transactions}">
-                    <td th:text="${transaction.id}"></td>
-                    <td th:text="${transaction.concept}"></td>
-                    <td th:text="${transaction.amount}"></td>
-                    <td th:text="${transaction.createdAt}"></td>
-                    <td th:text="${employee.idEmpl}"></td>
+                  <tr th:each="transactionList : ${transactions}">
+                    <td th:text="${transactionList.id}"></td>
+                    <td th:text="${transactionList.concept}"></td>
+                    <td th:text="${transactionList.amount}"></td>
+                    <td th:text="${transactionList.createdAt}"></td>
+                    <div th:each="empleadoList : ${transactionList.empleado}">
+                    <td th:text="${empleadoList.IdEmpl}"></td>
+                    </div>
                     <td>
                       <form>
                         <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>

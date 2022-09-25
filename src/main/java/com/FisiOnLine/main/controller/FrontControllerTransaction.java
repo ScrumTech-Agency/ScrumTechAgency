@@ -24,7 +24,7 @@ public class FrontControllerTransaction {
     @GetMapping("/addtransaction")
     public String getAddTransaction (Model model){
         model.addAttribute("formTransaction", new Transaction());
-        model.addAttribute("formEmployee", gestorEmployee.getEmployee(long idEmpl));
+        //model.addAttribute("formEmployee", gestorEmployee.getEmployee(id).getIdEmpl());
         return "add-transaction-new";
     }
 
@@ -35,11 +35,17 @@ public class FrontControllerTransaction {
     }
 
 
-    @PostMapping("/addtransaction")
-    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction){
-        System.out.println(transaction);
-        return "redirect:/wellcometransaction";
+    @PostMapping("/transaction/register")
+    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction_parametro){
+        try {
+            String mensaje = gestorTransaction.setTransaction(transaction_parametro);
+            return "redirect:/wellcometransaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+
     }
+
 
 
 }
