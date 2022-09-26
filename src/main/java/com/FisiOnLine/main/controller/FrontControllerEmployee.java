@@ -4,6 +4,7 @@ import com.FisiOnLine.main.model.Employee;
 import com.FisiOnLine.main.model.Enum_RoleName;
 import com.FisiOnLine.main.service.EmployeeManagerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,12 +30,8 @@ public class FrontControllerEmployee {
         return "add-employee-new";
     }
     @PostMapping("/employee/register")
-        public String postEmployee(@ModelAttribute("employeeRegister") Employee employeeParametro,Model model) {
+        public String postEmployee(@ModelAttribute("employeeRegister") @DateTimeFormat(pattern = "YYYY-MM-DD") Employee employeeParametro) {
         try {
-            model.addAttribute(employeeParametro);
-            Date today = new Date();
-            employeeParametro.setCratedAt(today);
-            System.out.println(today);
             String mensaje = employeeManager.setEmployee(employeeParametro);
             return "redirect:/welcome-employee";
         } catch (Exception e) {

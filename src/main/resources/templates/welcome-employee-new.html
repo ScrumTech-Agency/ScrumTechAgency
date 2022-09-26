@@ -6,64 +6,40 @@
     <title>Title</title>
 </head>
 <body>
-  <nav class="navbar bg-info fixed-top">
+<nav class="navbar bg-info fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">FisiOnline</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header bg-info">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">FisiOnline</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body bg-info">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Empresas</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-=======
-            <a class="fs-5 nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="fs-5 nav-link" aria-current="page" href="#">Usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="fs-5 nav-link" aria-current="page" href="#">Empresas</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="fs-5 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
->>>>>>> featureJanet
-                Transacciones
-              </a>
-              <ul class="dropdown-menu bg-info">
-                <li><a class="dropdown-item bg-info" href="/">Ingresos</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                <li><a class="dropdown-item bg-info" href="/">Gastos</a></li>
-                </li>
-              </ul>
-              <div class="navbar-nav ms-auto">
-<<<<<<< HEAD
-                <a class="nav-link active" href="/login"> Cerrar Sesión</a>
-=======
-                <a class="fs-5 nav-link" href="#"> Cerrar Sesión</a>
->>>>>>> featureJanet
-              </div>
-            </li>
-          </ul>
+        <a class="navbar-brand" href="#">FisiOnline</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header bg-info">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">FisiOnline</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-info">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" aria-current="page" href="#">Transacciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" aria-current="page" href="/welcome-employee">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" aria-current="page" href="#">Empresas</a>
+                    </li>
+                    <div class="navbar-nav ms-auto">
+                        <a class="fs-5 nav-link active" href="/login"> Cerrar Sesión</a>
+                    </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-  </div>
+    </div>
 </nav>
 <div>
     <div class="container">
@@ -76,12 +52,10 @@
                   <div class="row">
                     <div class="col d-flex justify-content-between">
                       <input type="submit" value="" class="btn btn-sm btn-light float-left">
-<<<<<<< HEAD
+
                       <a href="/" class="btn btn-sm btn-ligh mx-auto" style="margin:auto"></a>
-                      <a href="addemployee"  class="btn btn-sm btn-info float-right" type="submit"> + Nuevo employee </a>
-=======
-                      <button class="btn btn-sm btn-info" type="button">+ Nuevo Usuario</button>
->>>>>>> featureJanet
+                      <a href="addemployee"  class="btn btn-sm btn-info float-right" type="submit"> + Nuevo Empleado </a>
+
                     </div>
                     <h3 class= " tw-bold mb-3">Usuarios</h3>
                       <table class="table table-info table-striped">
@@ -104,7 +78,7 @@
                             <td th:text="${employee.enterprise}"></td>
                             <td>
                               <form th:action="@{/employee/update/{id}(id=${employee.idEmpl})}" th:method="get">
-                                <button  type="submit" class="btn btn-sm btn-outline-dark" >Editar</button>
+                                <button  type="submit" class="btn btn-sm btn-outline-dark" >Editar.</button>
                               </form>
                               <form th:action="@{/employee/front/{id}(id=${employee.idEmpl})}" th:method="delete">
                                 <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>

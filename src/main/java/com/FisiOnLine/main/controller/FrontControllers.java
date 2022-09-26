@@ -12,11 +12,10 @@ public class FrontControllers {
     }
 
     @GetMapping("/login")
-<<<<<<< HEAD
-    public String login(){return "login-new";
-=======
+
+
     public String login(){return "login-employee";
->>>>>>> featureJanet
+
     }
 
 }

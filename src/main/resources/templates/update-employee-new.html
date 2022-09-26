@@ -70,8 +70,8 @@
                                                 <input th:field = "*{emailEmpl}" type="email" class="form-control mb-3" placeholder="Correo: name@example.com"/>
                                                 <input th:field = "*{password}" type="password" class="form-control mb-3" placeholder="Password"/>
                                             </div>
-                                            <div th:each="rol : ${rolesList}" class="form-check">
-                                                <input  th:field="*{roleEmpl}" type="checkbox" th:text="${rol.name}" th:value="${rol.name}"></td>
+                                            <div th:each="rol : ${rolesList}"   class="form-check disabled">
+                                                <input  th:field="*{roleEmpl}" class="form-check-input" type="radio"  th:text="${rol.name}" th:value="${rol.name}"></td>
                                             </div>
                                             <div><span class="px- my-2 text-center">* Todos los campos son obligatorios</span></div>
                                             <div class="d-grid gap-2 mb-4 mt-4">
