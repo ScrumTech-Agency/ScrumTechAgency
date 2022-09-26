@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table(name="transaction")
 public class Transaction {
@@ -15,6 +17,11 @@ public class Transaction {
     private String concept;
     @Column
     private float amount;
+
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Enum_RoleTransaction.class)
+    private List<Enum_RoleTransaction> roleTransaction;
+
     @ManyToOne
     private Employee empleado;
     @ManyToOne
@@ -25,10 +32,11 @@ public class Transaction {
     private Date updatedAt;
 
     //Constructor
-    public Transaction(long id, String concept, float amount, Employee empleado, Enterprise enterprise, java.sql.Date createdAt, Date updatedAt) {
+    public Transaction(long id, String concept, float amount, List<Enum_RoleTransaction> roleTransaction, Employee empleado, Enterprise enterprise, java.sql.Date createdAt, Date updatedAt) {
         this.id = id;
         this.concept = concept;
         this.amount = amount;
+        this.roleTransaction = roleTransaction;
         this.empleado = empleado;
         this.enterprise = enterprise;
         this.createdAt = createdAt;
@@ -94,6 +102,14 @@ public class Transaction {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public List<Enum_RoleTransaction> getRoleTransaction() {
+        return roleTransaction;
+    }
+
+    public void setRoleTransaction(List<Enum_RoleTransaction> roleTransaction) {
+        this.roleTransaction = roleTransaction;
     }
 
     @Override

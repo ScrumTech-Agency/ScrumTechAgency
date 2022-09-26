@@ -19,7 +19,7 @@ public class GestorTransaction {
     //Constructor
     public GestorTransaction() {
         this.transactions = new ArrayList<>();
-        this.transactions.add(new Transaction(123,"Yoga",2000.5f, new Employee(123,"wilson","wash_30"/*, Enum_RoleName.Admin*/), new Enterprise(123456, "Scrumfisio","NIT808","30174282","Calle 24 A"), new java.sql.Date(2022-23-9),new Date()));
+       // this.transactions.add(new Transaction(123,"Yoga",2000.5f, new Employee(123,"wilson","wash_30"/*, Enum_RoleName.Admin*/), new Enterprise(123456, "Scrumfisio","NIT808","30174282","Calle 24 A"), new java.sql.Date(2022-23-9),new Date()));
     }
 
 

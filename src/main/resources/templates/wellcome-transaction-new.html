@@ -59,7 +59,7 @@
                 <table class="table table-info table-striped">
                   <thead>
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">ID transacción</th>
                     <th scope="col">Concepto</th>
                     <th scope="col">Monto</th>
                     <th scope="col">Fecha</th>
@@ -79,26 +79,12 @@
 
                     <td>
 
-                      <form>
-                        <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
+                      <form th:action="@{/transaction/update/{id}(id=${transactionList.id})}" th:method="get">
+                        <button class="btn btn-sm btn-outline-dark" type="submit">Editar</button>
                       </form>
                       <form th:action="@{/transaction/front/{id}(id=${transactionList.id})}" method="get">
                         <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>
                       </form>
-
-                      <!--
-                      <form>
-                        <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
-                      </form>
-                      <form th:action="@{/transaction/front/{id}(id=${transactionList.id})}" th:method="delete">
-                        <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>
-                      </form>
-
-
-
-                     <a th:href="@{/transaction/front/{id}(id=${transactionList.id})}">Delete</a>
-                     -->
-
                    </td>
 
                  </tr>

@@ -1,6 +1,7 @@
 package com.FisiOnLine.main.controller;
 
 import com.FisiOnLine.main.model.Employee;
+import com.FisiOnLine.main.model.Enum_RoleTransaction;
 import com.FisiOnLine.main.model.Transaction;
 import com.FisiOnLine.main.service.EmployeeManagerInterface;
 import com.FisiOnLine.main.service.EnterpriseManagerInterface;
@@ -22,7 +23,7 @@ public class FrontControllerTransaction {
     @GetMapping("/addtransaction")
     public String getAddTransaction (Model model){
         model.addAttribute("formTransaction", new Transaction());
-        //model.addAttribute("formEmployee", gestorEmployee.getEmployee(id).getIdEmpl());
+        model.addAttribute("rolesList", Enum_RoleTransaction.values());
         return "add-transaction-new";
     }
 
@@ -44,37 +45,6 @@ public class FrontControllerTransaction {
 
     }
 
-
-
-    /*
-    @PostMapping("/transaction/register")
-    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction_parametro){
-        try {
-            String mensaje = gestorTransaction.setTransaction(transaction_parametro);
-            return "redirect:/wellcometransaction";
-        } catch (Exception e) {
-            return "redirect:/error";
-        }
-
-    }
-     */
-
-
-/*
-    @DeleteMapping("/transaction/front/{id}")
-    public String deleteTransaction(@PathVariable Long id, Model model){
-        try {
-            gestorTransaction.DeleteTransaction(id);
-            return "redirect:/wellcome-transaction-new";
-        } catch (Exception e) {
-            return "redirect:/error";
-        }
-    }
-
- */
-
-
-
     @RequestMapping(value = "/transaction/front/{id}", method = RequestMethod.GET)
     public String deleteTransaction (@PathVariable (name = "id") Long id) {
         try {
@@ -83,6 +53,55 @@ public class FrontControllerTransaction {
         } catch (Exception e) {
             return "redirect:/error";
         }
+    }
+
+    @GetMapping("/updatetransaction")
+    public String getUpdateTransaction (Model model){
+        model.addAttribute("formUpdateTransaction", new Transaction());
+        model.addAttribute("rolesList", Enum_RoleTransaction.values());
+        return "update-transaction";
+    }
+
+
+
+    @GetMapping("/transaction/update/{id}")
+    public String getUpdateTransaction (@PathVariable Long id, Model model){
+        try {
+            System.out.println(id);
+            System.out.println(gestorTransaction.getTransaction(id));
+            model.addAttribute("formUpdateTransaction",gestorTransaction.getTransaction(id));
+            model.addAttribute("rolesList", Enum_RoleTransaction.values());
+            return "update-transaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+
+    }
+
+    /*
+    @PatchMapping("/transaction/update/register")
+    public String postUpateTransaction (@ModelAttribute("formUpdateTransaction") Transaction transaction_parametro){
+        try {
+            String mensaje = gestorTransaction.setTransaction(transaction_parametro);
+            return "redirect:/wellcometransaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+
+    }
+
+     */
+
+    @PostMapping("/transaction/update/register")
+    public String patchTransaction(@ModelAttribute("formUpdateTransaction") Transaction transactionParametro){
+        try {
+            System.out.println(transactionParametro);
+            gestorTransaction.UpdateTransaction(transactionParametro,transactionParametro.getId());
+            return "redirect:/wellcometransaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+
     }
 
 
