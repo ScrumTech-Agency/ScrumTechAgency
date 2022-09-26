@@ -48,4 +48,21 @@ public class FrontControllerTransaction {
 
 
 
+    /*
+    @PostMapping("/transaction/register")
+    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction_parametro){
+        try {
+            String mensaje = gestorTransaction.setTransaction(transaction_parametro);
+            return "redirect:/wellcometransaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+
+    }
+     */
+
+
+
+
+
 }

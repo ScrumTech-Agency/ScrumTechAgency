@@ -71,9 +71,18 @@
                                         <span class="input-group-text">.00</span>
                                     </div>
                                     <input type="text" class="form-control mb-4" th:field="*{concept}" placeholder="Descripción"/>
+
+                                    <!--
+                                    <div th:each="transactionSet : ${formTransaction}">
+                                        <div th:each="empleadoSet : ${transactionSet.empleado}">
+                                            <input type="text" class="form-control mb-4" th:field="*{empleadoSet.IdEmpl}" placeholder="ID Empleado"/>
+                                        </div>
+                                    </div>
+                                    -->
+
                                 </div>
                                     <div class="form-check mt-4">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                         <label class="form-check-label" for="exampleRadios1">
                                             Ingreso
                                         </label>
