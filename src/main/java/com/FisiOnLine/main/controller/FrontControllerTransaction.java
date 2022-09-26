@@ -8,9 +8,7 @@ import com.FisiOnLine.main.service.TransactionManagerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class FrontControllerTransaction {
@@ -62,6 +60,30 @@ public class FrontControllerTransaction {
      */
 
 
+/*
+    @DeleteMapping("/transaction/front/{id}")
+    public String deleteTransaction(@PathVariable Long id, Model model){
+        try {
+            gestorTransaction.DeleteTransaction(id);
+            return "redirect:/wellcome-transaction-new";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+    }
+
+ */
+
+
+
+    @RequestMapping(value = "/transaction/front/{id}", method = RequestMethod.GET)
+    public String deleteTransaction (@PathVariable (name = "id") Long id) {
+        try {
+            gestorTransaction.DeleteTransaction(id);
+            return "redirect:/wellcometransaction";
+        } catch (Exception e) {
+            return "redirect:/error";
+        }
+    }
 
 
 

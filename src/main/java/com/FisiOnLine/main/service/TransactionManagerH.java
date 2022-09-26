@@ -66,6 +66,7 @@ public class TransactionManagerH implements TransactionManagerInterface{
 
     @Override
     public String DeleteTransaction(Long id) throws Exception {
-        return null;
+        repository.deleteById(id);
+        return "Transacción Eliminada Exitosamente";
     }
 }

@@ -28,20 +28,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Empresas</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Transacciones
-            </a>
-            <ul class="dropdown-menu bg-info">
-              <li><a class="dropdown-item bg-info" href="#">Ingresos</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              <li><a class="dropdown-item bg-info" href="#">Gastos</a></li>
-              </li>
-            </ul>
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link active" href="#"> Cerrar Sesión</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/wellcometransaction">Transacciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Cerrar sesión</a>
           </li>
         </ul>
       </div>
@@ -85,22 +76,41 @@
                     <div th:each="empleadoList : ${transactionList.empleado}">
                     <td th:text="${empleadoList.IdEmpl}"></td>
                     </div>
+
                     <td>
+
                       <form>
                         <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
-                        <button class="btn btn-sm btn-outline-dark" type="button">Borrar</button>
                       </form>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                      <form th:action="@{/transaction/front/{id}(id=${transactionList.id})}" method="get">
+                        <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>
+                      </form>
+
+                      <!--
+                      <form>
+                        <button class="btn btn-sm btn-outline-dark" type="button">Editar</button>
+                      </form>
+                      <form th:action="@{/transaction/front/{id}(id=${transactionList.id})}" th:method="delete">
+                        <button type="submit" class="btn btn-sm btn-outline-dark" >Borrar</button>
+                      </form>
+
+
+
+                     <a th:href="@{/transaction/front/{id}(id=${transactionList.id})}">Delete</a>
+                     -->
+
+                   </td>
+
+                 </tr>
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 </div>
 </div>
