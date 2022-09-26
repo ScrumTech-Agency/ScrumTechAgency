@@ -78,19 +78,6 @@ public class FrontControllerTransaction {
 
     }
 
-    /*
-    @PatchMapping("/transaction/update/register")
-    public String postUpateTransaction (@ModelAttribute("formUpdateTransaction") Transaction transaction_parametro){
-        try {
-            String mensaje = gestorTransaction.setTransaction(transaction_parametro);
-            return "redirect:/wellcometransaction";
-        } catch (Exception e) {
-            return "redirect:/error";
-        }
-
-    }
-
-     */
 
     @PostMapping("/transaction/update/register")
     public String patchTransaction(@ModelAttribute("formUpdateTransaction") Transaction transactionParametro){
