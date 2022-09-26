@@ -1,15 +1,24 @@
 package com.FisiOnLine.main.model;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name="transaction")
 public class Transaction {
     //Atributos
+    @Id
     private long id;
+    @Column
     private String concept;
+    @Column
     private float amount;
+    @ManyToOne
     private Employee empleado;
+    @ManyToOne
     private Enterprise enterprise;
+    @Column
     private Date createdAt;
+    @Column
     private Date updatedAt;
 
     //Constructor
