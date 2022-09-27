@@ -14,19 +14,24 @@ import java.util.Optional;
 public class GestorTransaction {
 
     //Atributos
-    private ArrayList<Transaction> transaction;
+    private ArrayList<Transaction> transactions;
 
     //Constructor
     public GestorTransaction() {
+<<<<<<< HEAD
         this.transaction = new ArrayList<>();
         //this.transaction.add(new Transaction(123,"Yoga",2000.5f, new Employee(123,"wilson","wash_30"/*, Enum_RoleName.Admin*/), new Enterprise(123456, "Scrumfisio","NIT808","30174282","Calle 24 A"), new Date(),new Date()));
+=======
+        this.transactions = new ArrayList<>();
+       // this.transactions.add(new Transaction(123,"Yoga",2000.5f, new Employee(123,"wilson","wash_30"/*, Enum_RoleName.Admin*/), new Enterprise(123456, "Scrumfisio","NIT808","30174282","Calle 24 A"), new java.sql.Date(2022-23-9),new Date()));
+>>>>>>> featureAndres
     }
 
 
     //Lógica del negocio
 
-    public Transaction getTransaction(long id) throws Exception {
-        for (Transaction transaction: this.transaction) {
+    public Transaction getTransaction(Long id) throws Exception {
+        for (Transaction transaction: this.transactions) {
             if (transaction.getId() == id){
                 return transaction;
             }
@@ -39,7 +44,7 @@ public class GestorTransaction {
         try {
             getTransaction(transaction_parametro.getId());
         } catch (Exception e) {
-            this.transaction.add(transaction_parametro);
+            this.transactions.add(transaction_parametro);
             return "Transacción creada existosamente";
         }
         throw new Exception("La transacción ya existía, no se puede crear");
@@ -78,11 +83,29 @@ public class GestorTransaction {
 
     }
 
+    public  Transaction updateTransactionAll(Transaction transaction_update, Long id) throws Exception {
+        try {
+            Transaction transaction_Bd = getTransaction(Long.valueOf(id));
+
+            transaction_Bd.setId(transaction_update.getId());
+            transaction_Bd.setConcept(transaction_update.getConcept());
+            transaction_Bd.setAmount(transaction_update.getAmount());
+            transaction_Bd.setEmpleado(transaction_update.getEmpleado());
+            transaction_Bd.setEnterprise(transaction_update.getEnterprise());
+            transaction_Bd.setCreatedAt(transaction_update.getCreatedAt());
+            transaction_Bd.setUpdatedAt(transaction_update.getUpdatedAt());
+
+            return transaction_Bd;
+        } catch (Exception e) {
+            throw new Exception("La transacción no existe, no se actualizó ningún dato");
+        }
+    }
+
 
     public String deleteTransaction (long id) throws Exception {
         try {
             Transaction transaction = getTransaction(id);
-            this.transaction.remove(transaction);
+            this.transactions.remove(transaction);
 
             return "Transacción eliminada exitosamente";
 
@@ -90,9 +113,15 @@ public class GestorTransaction {
             throw new Exception("La transacción que intenta eliminar no existe");
         }
 
-
     }
 
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
 
 
 
