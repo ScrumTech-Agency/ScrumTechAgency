@@ -29,8 +29,23 @@ public class TransactionManagerH implements TransactionManagerInterface{
     }
 
     @Override
-    public String setTransaction(Transaction Transactions) throws Exception {
-        repository.save(Transactions);
+    public String setTransaction(Transaction transactions) throws Exception {
+        //System.out.println(transactions.getRoleTransaction());
+        //Se obtine el String del rol para aplicar logica del ingreso y egreso
+        String validarRol = transactions.getRoleTransaction().toString();
+        System.out.println(validarRol);
+        if( validarRol.equals("[Ingreso]")){
+            transactions.setAmount(transactions.getAmount());
+            System.out.println("Esto es un ingreso");
+            repository.save(transactions);
+        }
+        if(validarRol.equals("[Gasto]")){
+            transactions.setAmount(transactions.getAmount()*-1);
+            System.out.println("Esto es un Gasto");
+            repository.save(transactions);
+        }
+
+
         return "Transacción creada exitosamente";
     }
 
