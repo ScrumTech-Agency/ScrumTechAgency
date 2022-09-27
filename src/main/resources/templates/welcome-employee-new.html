@@ -75,7 +75,7 @@
                             <td th:text="${employee.nameEmpl}"></td>
                             <td th:text="${employee.emailEmpl}"></td>
                             <td th:text="${employee.roleEmpl}"></td>
-                            <td th:text="${employee.enterprise}"></td>
+                            <td th:text="${employee.enterprise.idEnterprise}"></td>
                             <td>
                               <form th:action="@{/employee/update/{id}(id=${employee.idEmpl})}" th:method="get">
                                 <button  type="submit" class="btn btn-sm btn-outline-dark" >Editar.</button>

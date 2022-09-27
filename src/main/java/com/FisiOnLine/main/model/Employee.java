@@ -1,6 +1,7 @@
 package com.FisiOnLine.main.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,17 +27,29 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Enum_RoleName.class, fetch = FetchType.EAGER)
     private List<Enum_RoleName> roleEmpl;
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
     private Enterprise enterprise;
     @OneToMany(mappedBy = "empleado")
-    private List<Transaction> transactions = new ArrayList<>();
+    private List<Transaction> transactions;
     @Column
     private Date updatedAt;
     @Column
     private Date createdAt;
+   
 
 
     //Constructor
+
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl, String password, List<Enum_RoleName> roleEmpl, Enterprise enterprise, Date createdAt) {
+        this.idEmpl = idEmpl;
+        this.nameEmpl = nameEmpl;
+        this.emailEmpl = emailEmpl;
+        this.password = password;
+        this.roleEmpl = roleEmpl;
+        this.enterprise = enterprise;
+        this.createdAt = createdAt;
+    }
 
     public Employee(long idEmpl, String nameEmpl, String emailEmpl, String password) {
         this.idEmpl = idEmpl;
@@ -141,5 +154,6 @@ public class Employee {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
 }
 
