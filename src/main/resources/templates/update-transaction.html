@@ -23,23 +23,25 @@
             <div class="offcanvas-body bg-info">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Usuarios</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/wellcometransaction">Transacciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Empresas</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/welcome-employee">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/wellcometransaction">Transacciones</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="#">Empresas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Cerrar sesión</a>
+                    <div class="navbar-nav ms-auto">
+                        <a class="fs-5 nav-link active" href="/login"> Cerrar Sesión</a>
+                    </div>
                     </li>
                 </ul>
             </div>
         </div>
+    </div>
     </div>
 </nav>
 <div class="container">
@@ -66,14 +68,14 @@
 
                                         </div>
 
-                                        <div th:each="rol : ${rolesList}" class="form-check">
-                                            <input th:field="*{roleTransaction}" type="checkbox" th:text="${rol.name}" th:value="${rol.name}"></td>
+                                        <div th:each="rol : ${rolesList}" class="form-check disabled">
+                                            <input th:field="*{roleTransaction}" class="form-check-input"type="radio" th:text="${rol.name}" th:value="${rol.name}"></td>
                                         </div>
 
 
                                         <div class="mt-3"><span class="px- my-2 text-center">* Digite los datos que quiere actualizar</span></div>
                                         <div class="d-grid gap-2 mb-4 mt-4">
-                                            <a href="/wellcometransaction" type="submit" class="btn btn-info">
+                                            <a href="/wellcometransaction" type="submit" class="btn btn-outline-dark">
                                                 Cancelar
                                             </a>
                                             <button class="btn btn-info" type="submit">Actualizar datos</button>

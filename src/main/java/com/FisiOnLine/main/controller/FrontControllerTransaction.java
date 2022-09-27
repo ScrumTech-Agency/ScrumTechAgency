@@ -7,6 +7,7 @@ import com.FisiOnLine.main.service.EmployeeManagerInterface;
 import com.FisiOnLine.main.service.EnterpriseManagerInterface;
 import com.FisiOnLine.main.service.TransactionManagerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class FrontControllerTransaction {
 
 
     @PostMapping("/transaction/register")
-    public String postAddTransaction (@ModelAttribute("formTransaction") Transaction transaction_parametro){
+    public String postAddTransaction (@ModelAttribute("formTransaction") @DateTimeFormat(pattern = "YYYY-MM-DD")  Transaction transaction_parametro){
         try {
             String mensaje = gestorTransaction.setTransaction(transaction_parametro);
             return "redirect:/wellcometransaction";

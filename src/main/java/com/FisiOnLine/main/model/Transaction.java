@@ -27,12 +27,12 @@ public class Transaction {
     @ManyToOne
     private Enterprise enterprise;
     @Column
-    private java.sql.Date createdAt;
+    private Date createdAt;
     @Column
     private Date updatedAt;
 
     //Constructor
-    public Transaction(long id, String concept, float amount, List<Enum_RoleTransaction> roleTransaction, Employee empleado, Enterprise enterprise, java.sql.Date createdAt, Date updatedAt) {
+    public Transaction(long id, String concept, float amount, List<Enum_RoleTransaction> roleTransaction, Employee empleado, Enterprise enterprise, Date createdAt, Date updatedAt) {
         this.id = id;
         this.concept = concept;
         this.amount = amount;
@@ -88,11 +88,11 @@ public class Transaction {
         this.enterprise = enterprise;
     }
 
-    public java.sql.Date getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(java.sql.Date createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

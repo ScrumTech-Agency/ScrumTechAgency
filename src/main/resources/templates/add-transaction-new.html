@@ -15,7 +15,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header bg-info">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">FisiOnline</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -23,23 +23,25 @@
             <div class="offcanvas-body bg-info">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Usuarios</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/wellcometransaction">Transacciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Empresas</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="/welcome-employee">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/wellcometransaction">Transacciones</a>
+                        <a class="fs-5 nav-link" aria-current="page" href="#">Empresas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Cerrar sesión</a>
+                    <div class="navbar-nav ms-auto">
+                        <a class="fs-5 nav-link active" href="/login"> Cerrar Sesión</a>
+                    </div>
                     </li>
                 </ul>
             </div>
         </div>
+    </div>
     </div>
 </nav>
 <div class="container">
@@ -66,8 +68,8 @@
 
                                     </div>
 
-                                    <div th:each="rol : ${rolesList}" class="form-check">
-                                        <input th:field="*{roleTransaction}" type="checkbox" th:text="${rol.name}" th:value="${rol.name}"></td>
+                                    <div th:each="rol : ${rolesList}" class="form-check disabled">
+                                        <input th:field="*{roleTransaction}" type="radio" class="form-check-input" th:text="${rol.name}" th:value="${rol.name}"></td>
                                     </div>
 
 
