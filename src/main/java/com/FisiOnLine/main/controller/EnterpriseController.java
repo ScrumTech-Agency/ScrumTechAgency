@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 
 @Controller
 public class EnterpriseController {
@@ -24,7 +26,7 @@ public class EnterpriseController {
         return "EnterpriseRegister";
     }
 
-    @PostMapping("/CreateEnterprise")
+    @PostMapping("/CreateEnterpriseNew")
     public String CreateEnterprise (@ModelAttribute("redirect:/WelcomeEnterprise") Enterprise EnterpriseX) throws Exception {
         String AnswerCreateEnterprise = EnterpriseBDX.setCreateEnterprise(EnterpriseX);
         return AnswerCreateEnterprise;
@@ -36,6 +38,8 @@ public class EnterpriseController {
     @GetMapping("/welcomeEnterprise")
     public String getUserList(Model model){
         model.addAttribute("Enterprise",EnterpriseBDX.getEnterpriseX());
+        List<Enterprise> ExEnterprise = EnterpriseBDX.getEnterpriseX();
+        System.out.println(ExEnterprise);
         return "WelcomeEnterpriseNew";
     }
 

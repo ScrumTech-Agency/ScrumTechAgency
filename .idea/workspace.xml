@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9c63bf-2f3f-46e4-89ef-4766bd585d33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/EnterpriseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/EmpresaCreadaConEXITO.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/WelcomeEnterpriseNew.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Enterprise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/model/Enterprise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/EnterpriseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/controller/EnterpriseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/EnterpriseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/EnterpriseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/FisiOnLine/main/service/GestorTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-enterprise.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-enterprise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/WelcomeEnterpriseNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/WelcomeEnterpriseNew.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +55,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/ScrumTechAgency/src/main/resources/templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ScrumTechAgency/src/main/resources/templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ScrumTechAgency\src\main\resources\templates" />

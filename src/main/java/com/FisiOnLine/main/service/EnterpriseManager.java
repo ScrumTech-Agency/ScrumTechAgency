@@ -1,90 +1,98 @@
 package com.FisiOnLine.main.service;
 
+import com.FisiOnLine.main.Repositories.EnterpriseRepository;
 import com.FisiOnLine.main.model.Enterprise;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EnterpriseManager implements EnterpriseManagerInterface {
-    private ArrayList<Enterprise> ListaDeEmpresas = new ArrayList<>();
+    //Atribute
+    Date Today = new Date();
+
+    //Inyectar un objeto del repositorio de la entidad enterprise
+    @Autowired
+    EnterpriseRepository repositoryEnterprise;
 
 
     //Metodo que me permite traer la lista de empresas
-    public ArrayList<Enterprise> getEnterpriseX (){
+    public List<Enterprise> getEnterpriseX (){
 
 
-        return getListaDeEmpresas();
+        return repositoryEnterprise.findAll();
     }
 
 
     //Metodo que devuelve un solo Enterprise pasandole el idEnterprise como parametro
     public Enterprise getOnlyEnterprise(Long idEnterprise) throws Exception {
-        ListaDeEmpresas=getListaDeEmpresas();
-        for (Enterprise EnterpriseX: this.ListaDeEmpresas){
-            if(EnterpriseX.getIdEnterprise()==idEnterprise){
-                return EnterpriseX;
-            }
+        Optional<Enterprise> EnterpriseBD = repositoryEnterprise.findById(idEnterprise);
+        if(EnterpriseBD.isPresent()){
+            return EnterpriseBD.get();
         }
-        throw new Exception("Enterprise NO Existente");
+        throw new Exception("IdEnterprise no asignado a ninguna enterprise de nuestra base de datos");
     }
 
 
     //Metodo que me permite adicionar un nuevo Enterprise al ArrayList
     public String setCreateEnterprise(Enterprise EnterpriseX) throws Exception {
-        try {
-            //Consulatmos si el sEnterprise con ese idEnterprise ya existe
-            getOnlyEnterprise(EnterpriseX.getIdEnterprise());
-        } catch (Exception e) {
-            //Aqui adicionamos el nuevo Enterprise al ArrayList
-            this.ListaDeEmpresas.add(EnterpriseX);
-            setListaDeEmpresas(ListaDeEmpresas);
-            return "EmpresaCreadaConEXITO";
+        //Preguntamos si ya hay alguna enterprise ya registrada con ese Id.
+        Optional<Enterprise> EnterpriseBD = repositoryEnterprise.findById(EnterpriseX.getIdEnterprise());
+        if(!EnterpriseBD.isPresent()){
+            repositoryEnterprise.save(EnterpriseX);
+            return "CreateEnterpriseWhithSucces";
+
         }
-        throw new Exception("El Enterprise YA EXISTE");
+        return ("Ese Id ya esta regitrado a una Enterprise Existente");
     }
 
     //Metodo para actualizar un Enterprise
     public Enterprise UpdateEnterpriseAll(Enterprise EnterpriseX) throws Exception {
-        try {
-            //Consulatmos si el sEnterprise con ese idEnterprise  existe y lo actualizamos
-            Enterprise EnterpriseBD = getOnlyEnterprise(EnterpriseX.getIdEnterprise());
-            String IdSacado = String.valueOf((EnterpriseX.getIdEnterprise()));
-            if(IdSacado !=null){
-                EnterpriseBD.setIdEnterprise(EnterpriseX.getIdEnterprise());
-                EnterpriseBD.setAddress(EnterpriseX.getAddress());
-                EnterpriseBD.setDocument(EnterpriseX.getDocument());
-                EnterpriseBD.setName(EnterpriseX.getName());
-                EnterpriseBD.setPhone(EnterpriseX.getPhone());
+        //LLamamos a la enterprise a actualizar de la BD
+        Enterprise enterpriseBD = getOnlyEnterprise(EnterpriseX.getIdEnterprise());
 
-            }
-            return EnterpriseBD;
-        } catch (Exception e) {
-            throw new Exception("Empresa NO EXISTE, por lo tanto no se ACTUALIZO");
-
+        //Actualizamos atributos
+        if(EnterpriseX.getName()!=null && !EnterpriseX.getName().equals("")){
+            enterpriseBD.setName(EnterpriseX.getName());
         }
+
+        if(EnterpriseX.getDocument()!=null && !EnterpriseX.getDocument().equals("")){
+            enterpriseBD.setDocument(EnterpriseX.getDocument());
+        }
+
+        if(EnterpriseX.getAddress()!=null && !EnterpriseX.getAddress().equals("")){
+            enterpriseBD.setAddress(EnterpriseX.getAddress());
+        }
+
+        if(EnterpriseX.getPhone()!=null && !EnterpriseX.getPhone().equals("")){
+            enterpriseBD.setPhone(EnterpriseX.getPhone());
+        }
+
+        if(EnterpriseX.getCreatedAt()!=null && !EnterpriseX.getCreatedAt().equals("")){
+            enterpriseBD.setCreatedAt(EnterpriseX.getCreatedAt());
+        }
+
+        enterpriseBD.setUpdateAt(Today);
+
+        return repositoryEnterprise.save(enterpriseBD);
 
 
     }
 
     //Metodo para eliminar un Enterprise
     public String DeleteEnterprise (Long idEnterprise) throws Exception {
-        try {
-            Enterprise EnterpriseX = getOnlyEnterprise(idEnterprise);
-            this.ListaDeEmpresas.remove(EnterpriseX);
-            return "Empresa ELIMINADA con exito";
-        } catch (Exception e) {
-            throw new Exception("Enterprise NO EXISENTE. Imposible eliminar");
+        Optional<Enterprise> enterpriseBD = repositoryEnterprise.findById(idEnterprise);
+        if(enterpriseBD.isPresent()){
+            repositoryEnterprise.deleteById(idEnterprise);
+            return "Enterprise Eliminada con exito";
         }
+        throw new Exception("Enterprise NOOOOO encontarda");
     }
 
 
-    //Getters and Setters de ListaDeEmpresas
-    public ArrayList<Enterprise> getListaDeEmpresas() {
-        return ListaDeEmpresas;
-    }
-
-    public void setListaDeEmpresas(ArrayList<Enterprise> ListaDeEmpresas) {
-        ListaDeEmpresas = ListaDeEmpresas;
-    }
 
 }
