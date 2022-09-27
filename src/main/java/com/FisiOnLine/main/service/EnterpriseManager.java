@@ -38,7 +38,7 @@ public class EnterpriseManager implements EnterpriseManagerInterface {
             //Aqui adicionamos el nuevo Enterprise al ArrayList
             this.ListaDeEmpresas.add(EnterpriseX);
             setListaDeEmpresas(ListaDeEmpresas);
-            return "Enterprise nuevo creado con EXITO";
+            return "EmpresaCreadaConEXITO";
         }
         throw new Exception("El Enterprise YA EXISTE");
     }

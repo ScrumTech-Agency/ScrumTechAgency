@@ -1,14 +1,9 @@
 package com.FisiOnLine.main.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.apache.catalina.User;
-
 import javax.persistence.*;
-
 
 @Entity
 @Table(name="Empresas")
@@ -30,21 +25,25 @@ public class Enterprise {
     private List<Transaction> transactions;
 
     @Column
-    private Date createdAt;
+    private java.sql.Date createdAt;
     @Column
     private Date updateAt;
     @OneToMany(mappedBy = "enterprise")
     private List<Employee> employees;
 
     // constructor
-    public Enterprise(long idEnterprise, String name, String document, String phone, String address) {
+
+
+    public Enterprise(long idEnterprise, String name, String document, String phone, String address, java.sql.Date createdAt, Date updateAt) {
         this.idEnterprise = idEnterprise;
         this.name = name;
         this.document = document;
         this.phone = phone;
         this.address = address;
-
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
     }
+
     //constructor sin atributos
     public Enterprise() {
     }
@@ -91,13 +90,6 @@ public class Enterprise {
         this.address = address;
     }
 
-    /*public User[] getUsers() {
-        return users;
-    }
-
-    public void setUsers(User[] users) {
-        this.users = users;
-    }*/
 
     public List<Transaction> getTransactions() {
         return transactions;
@@ -107,11 +99,11 @@ public class Enterprise {
         this.transactions = transactions;
     }
 
-    public Date getCreatedAt() {
+    public java.sql.Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(java.sql.Date createdAt) {
         this.createdAt = createdAt;
     }
 
