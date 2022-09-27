@@ -59,22 +59,19 @@
                                         <h3 class=" tw-bold mb-3 text-center">Nuevo Usuario</h3>
                                         <form th:object="${employeeRegister}"  th:method="post"  th:action="@{/employee/register}" class="col-lg-8 mx-auto mb-4">
                                             <div class="mt-4 mb-4">
-                                                <input th:field = "*{createdAt}"  type="date" class="form-control mb-4" placeholder="dd/mm/aaaa"/>
                                                 <input th:field = "*{idEmpl}"  type="text" class="form-control mb-4" placeholder="ID Empleado"/>
-                                                <input th:field = "*{enterprise.idEnterprise}"  type="text" class="form-control mb-4" placeholder="ID empresa"/>
                                                 <input th:field = "*{nameEmpl}"  type="text" class="form-control mb-4" placeholder="Nombre completo"/>
                                                 <input th:field = "*{emailEmpl}" type="email" class="form-control mb-3" placeholder="Correo: name@example.com"/>
-                                                <input th:field = "*{password}" type="password" class="form-control mb-3" placeholder="Password"/>
-                                            </div >
-
-                                                <div th:each="rol : ${rolesList}"   class="form-check disabled">
-                                                    <input  th:field="*{roleEmpl}" class="form-check-input" type="radio"  th:text="${rol.name}" th:value="${rol.name}"></td>
-                                                </div>
-
+                                            </div>
+                                            <div th:each="rol : ${rolesList}"   class="form-check disabled">
+                                                <input  th:field="*{roleEmpl}" class="form-check-input" type="radio"  th:text="${rol.name}" th:value="${rol.name}"></td>
+                                            </div>
                                             <div><span class="px- my-2 text-center">* Todos los campos son obligatorios</span></div>
                                             <div class="d-grid gap-2 mb-4 mt-4">
-                                                <button type="reset" class="btn btn-outline-dark">Cancelar</button>
-                                                <button class="btn btn-info" type="submit">Guardar</button>
+                                                <a href="/welcome-employee" class="btn btn-outline-dark" type="submit">Cancelar</a>
+                                                <button class="btn btn-info" type="submit">Actualizar Empleado</button>
+                                            </div>
+                                            <div class="d-grid gap-2">
                                             </div>
                                         <div class="d-grid gap-2">
                                         </div>

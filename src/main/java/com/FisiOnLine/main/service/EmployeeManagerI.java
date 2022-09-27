@@ -57,9 +57,7 @@ public class EmployeeManagerI implements EmployeeManagerInterface{
         if (employeeUpdate.getEmailEmpl() != null && !employeeUpdate.getEmailEmpl().equals("")) {
             employee_Bd.setEmailEmpl(employeeUpdate.getEmailEmpl());
         }
-        if (employeeUpdate.getPassword() != null && !employeeUpdate.getPassword().equals("")) {
-            employee_Bd.setPassword(employeeUpdate.getPassword());
-        }
+
         Date today = new Date();
         employee_Bd.setUpdatedAt(today);
         //System.out.println(today);

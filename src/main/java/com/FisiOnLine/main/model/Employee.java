@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,47 +19,36 @@ public class Employee {
     private String nameEmpl;
     @Column
     private String emailEmpl;
-    @Column
-    private String password;
 
     //private Profile profileEmpl;
     @Enumerated(EnumType.STRING)
-    @ElementCollection(targetClass = Enum_RoleName.class, fetch = FetchType.EAGER)
+    @ElementCollection(targetClass = Enum_RoleName.class )
     private List<Enum_RoleName> roleEmpl;
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
     private Enterprise enterprise;
-    @OneToMany(mappedBy = "empleado")
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany
     private List<Transaction> transactions;
     @Column
     private Date updatedAt;
     @Column
-    private Date createdAt;
-   
+    private Date cratedAt;
 
 
     //Constructor
 
-    public Employee(long idEmpl, String nameEmpl, String emailEmpl, String password, List<Enum_RoleName> roleEmpl, Enterprise enterprise, Date createdAt) {
+
+    public Employee(long idEmpl, String nameEmpl, String emailEmpl, List<Enum_RoleName> roleEmpl, Enterprise enterprise, Date cratedAt) {
         this.idEmpl = idEmpl;
         this.nameEmpl = nameEmpl;
         this.emailEmpl = emailEmpl;
-        this.password = password;
         this.roleEmpl = roleEmpl;
         this.enterprise = enterprise;
-        this.createdAt = createdAt;
+        this.cratedAt = cratedAt;
     }
-
-    public Employee(long idEmpl, String nameEmpl, String emailEmpl, String password) {
-        this.idEmpl = idEmpl;
-        this.nameEmpl = nameEmpl;
-        this.emailEmpl = emailEmpl;
-        this.password = password;
-        //this.roleEmpl = roleEmpl;
-
-    }
-
-
 
     //Constructor sin Atributos
     public Employee() {
@@ -91,13 +79,6 @@ public class Employee {
         this.emailEmpl = emailEmpl;
     }
 
-    /*public Profile getProfileEmpl() {
-        return profileEmpl;
-    }
-
-    public void setProfileEmpl(Profile profileEmpl) {
-        this.profileEmpl = profileEmpl;
-    }*/
 
     public List<Enum_RoleName> getRoleEmpl() {
         return roleEmpl;
@@ -132,28 +113,12 @@ public class Employee {
     }
 
     public Date getCratedAt() {
-        return createdAt;
+        return cratedAt;
     }
 
-    public void setCratedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setCratedAt(Date cratedAt) {
+        this.cratedAt = cratedAt;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
 
 }
-

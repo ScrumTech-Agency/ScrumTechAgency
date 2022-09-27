@@ -5,6 +5,7 @@ import com.FisiOnLine.main.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,14 +35,19 @@ public class TransactionManagerH implements TransactionManagerInterface{
         //Se obtine el String del rol para aplicar logica del ingreso y egreso
         String validarRol = transactions.getRoleTransaction().toString();
         System.out.println(validarRol);
+        List totalTransaction = new ArrayList();
         if( validarRol.equals("[Ingreso]")){
             transactions.setAmount(transactions.getAmount());
             System.out.println("Esto es un ingreso");
+            totalTransaction.add(transactions.getAmount());
+            System.out.println(totalTransaction);
             repository.save(transactions);
         }
         if(validarRol.equals("[Gasto]")){
             transactions.setAmount(transactions.getAmount()*-1);
+            totalTransaction.add(transactions.getAmount()*-1);
             System.out.println("Esto es un Gasto");
+            System.out.println(totalTransaction);
             repository.save(transactions);
         }
 
@@ -84,4 +90,31 @@ public class TransactionManagerH implements TransactionManagerInterface{
         repository.deleteById(id);
         return "Transacción Eliminada Exitosamente";
     }
+
+   /* private void ingressEgressManager(Transaction transactions) {
+        String validarRol = transactions.getRoleTransaction().toString();
+        System.out.println(validarRol);
+        List gastoTotal = new ArrayList<>();
+        List ingresoTotal = new ArrayList<>();
+        if( validarRol.equals("[Ingreso]")){
+            transactions.setAmount(transactions.getAmount());
+            System.out.println("Esto es un ingreso");
+            ingresoTotal.add(transactions.getAmount());
+            float suma=0;
+            for (int i = 0; i < ingresoTotal.size(); i++) {
+                suma = suma + i;
+            }
+            System.out.println(suma);
+            repository.save(transactions);
+        }
+        if(validarRol.equals("[Gasto]")){
+            transactions.setAmount(transactions.getAmount()*-1);
+            gastoTotal.add(transactions.getAmount()*-1);
+            System.out.println("Esto es un Gasto");
+
+            repository.save(transactions);
+        }
+    }*/
+
+
 }

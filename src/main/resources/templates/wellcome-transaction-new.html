@@ -92,6 +92,20 @@
                  </tr>
                  </tbody>
                </table>
+                <table class="table table-info table-striped">
+                  <thead>
+                  <tr>
+                    <th scope="col">Total Transacciones</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr th:each="transactionList : ${transactions}">
+                    <td th:text="${transactionList.id}"></td>
+                  </tbody>
+                </table>
+
+
+
              </div>
            </div>
          </div>

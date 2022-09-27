@@ -1,7 +1,5 @@
 package com.FisiOnLine.main.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +15,8 @@ public class Transaction {
     private String concept;
     @Column
     private float amount;
+    @Column
+    private float totalTransaction;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Enum_RoleTransaction.class)
@@ -111,6 +111,10 @@ public class Transaction {
     public void setRoleTransaction(List<Enum_RoleTransaction> roleTransaction) {
         this.roleTransaction = roleTransaction;
     }
+
+
+
+
 
     @Override
     public String toString() {
