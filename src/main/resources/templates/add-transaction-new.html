@@ -54,16 +54,17 @@
                             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 py-6 bg-white px-6">
                                 <h3 class=" tw-bold mb-3 text-center">Nueva Transacción</h3>
                                 <form method="post" th:object="${formTransaction}" th:action="@{/transaction/register}">
-                                <div class="mt-4 mb-4">
-                                    <input type="date" class="form-control mb-4" th:field="*{createdAt}" placeholder="Fecha"/>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text">$</span>
-                                        <input type="text" class="form-control" th:field="*{amount}" aria-label="Amount (to the nearest dollar)">
-                                        <span class="input-group-text">.00</span>
-                                    </div>
-                                    <input type="text" class="form-control mb-4" th:field="*{concept}" placeholder="Descripción"/>
+                                    <div class="mt-4 mb-4">
+                                        <input type="date" class="form-control mb-4" th:field="*{createdAt}" placeholder="Fecha"/>
+                                        <input type="text" class="form-control mb-4" th:field="*{empleado.idEmpl}" placeholder="ID empleado"/>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control" th:field="*{amount}" aria-label="Amount (to the nearest dollar)">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                        <input type="text" class="form-control mb-4" th:field="*{concept}" placeholder="Descripción"/>
 
-                                </div>
+                                    </div>
 
                                     <div th:each="rol : ${rolesList}" class="form-check">
                                         <input th:field="*{roleTransaction}" type="checkbox" th:text="${rol.name}" th:value="${rol.name}"></td>
@@ -75,8 +76,8 @@
                                         <button type="reset" class="btn btn-outline-dark">Limpiar datos</button>
                                         <button class="btn btn-info" type="submit">Guardar</button>
                                     </div>
-                                <div class="d-grid gap-2">
-                                </div>
+                                    <div class="d-grid gap-2">
+                                    </div>
                                 </form>
                             </div>
                             </div>
