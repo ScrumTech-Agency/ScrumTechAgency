@@ -112,9 +112,13 @@ public class Transaction {
         this.roleTransaction = roleTransaction;
     }
 
+    public float getTotalTransaction() {
+        return totalTransaction;
+    }
 
-
-
+    public void setTotalTransaction(float totalTransaction) {
+        this.totalTransaction = totalTransaction;
+    }
 
     @Override
     public String toString() {

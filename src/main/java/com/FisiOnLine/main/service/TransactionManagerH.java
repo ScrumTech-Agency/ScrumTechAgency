@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class TransactionManagerH implements TransactionManagerInterface{
-
+    ArrayList<Float> totalTransaction = new ArrayList<Float>();
     @Autowired
     private TransactionRepository repository;
 
@@ -35,23 +35,29 @@ public class TransactionManagerH implements TransactionManagerInterface{
         //Se obtine el String del rol para aplicar logica del ingreso y egreso
         String validarRol = transactions.getRoleTransaction().toString();
         System.out.println(validarRol);
-        List totalTransaction = new ArrayList();
+        //Se crea arraylist de float para guardar los montos
+
+
         if( validarRol.equals("[Ingreso]")){
             transactions.setAmount(transactions.getAmount());
-            System.out.println("Esto es un ingreso");
+
             totalTransaction.add(transactions.getAmount());
-            System.out.println(totalTransaction);
+           System.out.println("Esto es un ingreso" + totalTransaction);
+
             repository.save(transactions);
         }
         if(validarRol.equals("[Gasto]")){
             transactions.setAmount(transactions.getAmount()*-1);
-            totalTransaction.add(transactions.getAmount()*-1);
-            System.out.println("Esto es un Gasto");
-            System.out.println(totalTransaction);
-            repository.save(transactions);
+            totalTransaction.add(transactions.getAmount());
+            System.out.println("Esto es un Gasto"+ totalTransaction);
+           repository.save(transactions);
         }
-
-
+        float sumTotalTransaction=0;
+        for (float suma:totalTransaction){
+            sumTotalTransaction+=suma;
+        }
+        transactions.setTotalTransaction(sumTotalTransaction);
+        System.out.println(transactions.getTotalTransaction());
         return "Transacción creada exitosamente";
     }
 
